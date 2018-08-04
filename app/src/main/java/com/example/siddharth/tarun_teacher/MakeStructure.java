@@ -12,16 +12,11 @@ import com.google.firebase.database.FirebaseDatabase;
 //import com.google.firebase.database.FirebaseDatabase;
 
 
- public abstract class MakeStructure extends AppCompatActivity {
+ public abstract class MakeStructure  {
     static FirebaseDatabase reference;
 
-    @Override
-     protected void onCreate(@Nullable Bundle savedInstanceState) {
-          super.onCreate(savedInstanceState);
-          setContentView(R.layout.signup);
+     static boolean makestruct(String userid){
          reference = FirebaseDatabase.getInstance();
-     }
-     static   boolean makestruct(String userid){
          DatabaseReference users=reference.getReference("users");
          DatabaseReference live=reference.getReference("liveranks");
          DatabaseReference devinfo=reference.getReference("devinfo");
