@@ -108,7 +108,8 @@ public class singnin extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("ds", "createUserWithEmail:success");
                                     mAuth=FirebaseAuth.getInstance();
-                                    gohome();
+                                   // gohome();
+                                   MakeStructure.makestruct(mAuth.getUid());
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("sd", "createUserWithEmail:failure", task.getException());
