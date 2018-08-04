@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    >
+
+    <item
+        android:color="@color/colorPrimary"
+        android:icon="@mipmap/accountsetting_foreground"
+        android:title=""
+        app:showAsAction="ifRoom|withText"
+
+        />
+    <item
+        android:icon="@mipmap/bookingandchat_foreground"
+        android:color="@android:color/holo_green_dark"
+        android:title=""
+        app:showAsAction="ifRoom|withText"
+        />
+    <item
+        android:color="@android:color/holo_orange_dark"
+        android:icon="@mipmap/insight_foreground"
+        android:title=""
+        app:showAsAction="ifRoom|withText"
+        />
+</menu>

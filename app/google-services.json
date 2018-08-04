@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "29167687670",
+    "firebase_url": "https://tute3-master.firebaseio.com",
+    "project_id": "tute3-master",
+    "storage_bucket": "tute3-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29167687670:android:2521e6b4cc15e682",
+        "android_client_info": {
+          "package_name": "com.example.siddharth.tarun_teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29167687670-fgpc3dbfr51kdkq28vq1tve5ocfan0nu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.siddharth.tarun_teacher",
+            "certificate_hash": "668b438e7189d813d8ddb4e880574dff51697ecc"
+          }
+        },
+        {
+          "client_id": "29167687670-3db10888c63kd8uqvnbnos5a95lng1r8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5PPcmxaCmzSKVVWqAc4FZlhPgulyBjfY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29167687670-3db10888c63kd8uqvnbnos5a95lng1r8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

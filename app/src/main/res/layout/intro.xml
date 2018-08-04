@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <github.chenupt.springindicator.SpringIndicator
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scaleX=".2"
+        android:scaleY=".2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:siIndicatorColor="@color/colorPrimary"
+        app:siSelectedTextColor="@android:color/white"
+        app:siTextColor="@color/colorPrimaryDark"
+        app:siTextSize="18sp" />
+
+    <com.example.ay.tute3.ViewPagerX
+        android:id="@+id/vpx"
+        android:layout_width="360dp"
+        android:layout_height="509dp"
+        app:layout_constraintBottom_toTopOf="@+id/indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

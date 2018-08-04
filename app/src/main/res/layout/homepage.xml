@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sc1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@color/forestgreen"
+                android:orientation="vertical"
+                android:paddingLeft="20dp">
+
+                <android.support.design.widget.CoordinatorLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FiitJee"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+                    <Spinner
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="end"
+                        android:background="@mipmap/ic_more_foreground"
+                        android:entries="@array/country_arrays"
+                        >
+                    </Spinner>
+
+
+                </android.support.design.widget.CoordinatorLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/grey"
+                            android:gravity="center"
+                            android:text=" Sagar "
+                            android:textColor="@color/white"
+                            android:textSize="10dp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.5dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/grey"
+                            android:gravity="center"
+                            android:text=" Ayush "
+                            android:textColor="@color/white"
+                            android:textSize="10dp" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/rating_homepage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-45dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="-5dp"
+                    android:paddingTop="20dp"
+                    android:scaleX="0.6"
+                    android:scaleY="0.6"
+                    android:theme="@style/RatingBar" />
+            </LinearLayout>
+
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bnve"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:menu="@menu/homepage" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/tab1"
+                    layout="@layout/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible" />
+
+                <include
+                    android:id="@+id/tab2"
+                    layout="@layout/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/tab3"
+                    layout="@layout/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/sample3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+        <!--show on revelal-->
+        <LinearLayout
+android:id="@+id/llsv_d"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_grey"
+            android:orientation="vertical"
+            android:tag="Bottom3">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ranklayoutback">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:text="RANK1"
+                                android:textColor="#58595b"
+                                android:textSize="15sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|top"
+                                android:paddingRight="8dp"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_clickable="false"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="2"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="12dp"
+                                app:srb_starPadding="2dp"
+                                app:srb_starWidth="12dp"
+                                app:srb_stepSize="0.5" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:text="RANK1"
+                                android:textColor="#58595b"
+                                android:textSize="15sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|top"
+                                android:paddingRight="8dp"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_clickable="false"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="2"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="12dp"
+                                app:srb_starPadding="2dp"
+                                app:srb_starWidth="12dp"
+                                app:srb_stepSize="0.5" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:text="RANK1"
+                                android:textColor="#58595b"
+                                android:textSize="15sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|top"
+                                android:paddingRight="8dp"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_clickable="false"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="2"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="12dp"
+                                app:srb_starPadding="2dp"
+                                app:srb_starWidth="12dp"
+                                app:srb_stepSize="0.5" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:text="RANK1"
+                                android:textColor="#58595b"
+                                android:textSize="15sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|top"
+                                android:paddingRight="8dp"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_clickable="false"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="2"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="12dp"
+                                app:srb_starPadding="2dp"
+                                app:srb_starWidth="12dp"
+                                app:srb_stepSize="0.5" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        app:cardElevation="0dp"
+                        app:cardCornerRadius="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="8dp"
+                                android:text="RANK1"
+                                android:textColor="#58595b"
+                                android:textSize="15sp" />
+
+                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="start|top"
+                                android:paddingRight="8dp"
+                                app:srb_clearRatingEnabled="false"
+                                app:srb_clickable="false"
+                                app:srb_isIndicator="false"
+                                app:srb_minimumStars="1"
+                                app:srb_numStars="5"
+                                app:srb_rating="2"
+                                app:srb_scrollable="false"
+                                app:srb_starHeight="12dp"
+                                app:srb_starPadding="2dp"
+                                app:srb_starWidth="12dp"
+                                app:srb_stepSize="0.5" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+        <!--show without reveal-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="-4dp"
+                app:cardCornerRadius="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/rankBackground"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="Ranks"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="20dp"
+                    android:text="56"
+                    android:textColor="@color/white" />
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/forestgreen"
+        android:gravity="center_vertical"
+        android:onClick="openpromote"
+        android:paddingLeft="10dp"
+        android:text="Promote"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/forestgreen"
+
+            android:foregroundGravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
+    -->
+
+</android.support.constraint.ConstraintLayout>
+

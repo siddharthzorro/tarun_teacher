@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:gravity="center_vertical"
+        android:text="About"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:onClick="openabout"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:gravity="center_vertical"
+        android:text="Contact us"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:onClick="opencontactus"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:gravity="center_vertical"
+        android:text="Feedback"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:onClick="openfeedback"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="5dp"
+        />
+    <TextView
+        android:gravity="center_vertical"
+        android:text="Rate us"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:onClick="openrateus"
+        />
+
+</LinearLayout>

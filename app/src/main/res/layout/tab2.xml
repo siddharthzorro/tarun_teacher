@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="Institute Name"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        >
+
+    <EditText
+        android:id="@+id/buildind_et_ins_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:background="@color/krilin"
+
+        />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="About"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+
+        />
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        >
+
+    <EditText
+        android:id="@+id/buildind_et_about"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text=""
+        android:background="@color/krilin"
+        android:textSize="20dp"
+        />
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:text="Subjects"
+        android:layout_width="150dp"
+        android:layout_height="20dp" />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="50dp"
+            android:text="Teachers"
+            android:layout_width="150dp"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+     <android.support.v7.widget.CardView
+         android:layout_width="10dp"
+         android:layout_height="wrap_content"
+         app:cardCornerRadius="4dp"
+         android:layout_weight="1"
+         android:layout_marginLeft="16dp"
+         android:layout_marginRight="8dp"
+         >
+         <Spinner
+             android:id="@+id/buildind_sp_subject1"
+             android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:backgroundTint="@color/grey"
+             android:entries="@array/country_arrays"
+         />
+     </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_weight="1"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp"
+            >
+            <EditText
+                android:id="@+id/buildind_et_teacher1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/krilin"
+                />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            >
+            <Spinner
+                android:id="@+id/buildind_sp_subject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/grey"
+                android:entries="@array/country_arrays"
+                />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_weight="1"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp"
+            >
+            <EditText
+                android:id="@+id/buildind_et_teacher2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/krilin"
+                />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            >
+            <Spinner
+                android:id="@+id/buildind_sp_subject3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/grey"
+                android:entries="@array/country_arrays"
+                />
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_weight="1"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp"
+            >
+            <EditText
+                android:id="@+id/buildind_et_teacher3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/krilin"
+                />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text="Add other"
+            android:layout_width="150dp"
+            android:layout_height="20dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Tuition Type"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <Switch
+
+            android:background="@color/krilin"
+            android:id="@+id/building_switch_grp_tuition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Group tuition"
+            android:paddingLeft="5dp"
+            />
+
+        <Switch
+            android:background="@color/krilin"
+            android:id="@+id/building_switch_hom_tuition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Home Tuition"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="5dp"
+            />
+
+    </LinearLayout>
+
+    <include layout="@layout/building2"/>
+
+</LinearLayout>

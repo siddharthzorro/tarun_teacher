@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview_graph"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/no_of_visits" />
+
+      <!--  <com.numetriclabz.numandroidcharts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/bar_chart"/>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="15dp"
+            android:text="Monthly Overview"
+            android:textStyle="bold"
+            />
+
+
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <org.eazegraph.lib.charts.ValueLineChart
+                android:id="@+id/cubiclinechart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:egUseCubic="true"
+                app:egUseOverlapFill="true"
+                app:egCurveSmoothness="0.4"
+                app:egIndicatorLineColor="#FE6DA8"
+                app:egLegendHeight="40dp"
+                app:egShowStandardValue="true"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="15dp"
+                android:paddingLeft="7dp"
+                android:paddingBottom="4dp"
+                android:background="@color/white"
+                android:paddingRight="55dp"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="M"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="T"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="W"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="T"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="F"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="S"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="S"
+                    />
+
+            </LinearLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="15dp"
+            android:text="Review"
+            android:textStyle="bold"
+            />
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+               >
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@color/grey"
+                    android:layout_marginLeft="8dp"
+                    />
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Tarun"
+                            android:textColor="@android:color/black" />
+
+                        <com.willy.ratingbar.ScaleRatingBar
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srb_numStars="5"
+                            android:gravity="start|top"
+                            app:srb_minimumStars="1"
+                            app:srb_rating="2"
+                            app:srb_starWidth="12dp"
+                            app:srb_starHeight="12dp"
+                            app:srb_stepSize="0.5"
+                            app:srb_isIndicator="false"
+                            app:srb_clickable="false"
+                            app:srb_scrollable="false"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_starPadding="2dp"
+                            android:paddingLeft="3dp"
+
+                            >
+                        </com.willy.ratingbar.ScaleRatingBar>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:backgroundTint="@android:color/transparent"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="1dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:onClick="expandable"
+                                    android:text="Lor  nj hs dcj hd sjfdjc djfd fjdj hcd jdj jd f dbh dbh hdv dhsdbsh dhsdb dhsbd hs"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+
+                                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                                    android:id="@+id/expandableLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    app:ael_duration="500"
+                                    app:ael_interpolator="fastOutSlowIn">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="sd dsds dsds dsdsd sss s s sd  dd dd d d d d d d sscs cc cdcsdjcndscjds  jkdndsjkcsd dsjkdsjkcdssd  djsdbdsk"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/black"
+                                        />
+                                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@color/grey"
+                android:layout_marginLeft="8dp"
+                />
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Tarun"
+                    android:textColor="@android:color/black" />
+
+                <com.willy.ratingbar.ScaleRatingBar
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srb_numStars="5"
+                    app:srb_minimumStars="1"
+                    app:srb_rating="2"
+                    app:srb_starWidth="12dp"
+                    app:srb_starHeight="12dp"
+                    app:srb_stepSize="0.5"
+                    app:srb_isIndicator="false"
+                    app:srb_clickable="false"
+                    app:srb_scrollable="false"
+                    app:srb_clearRatingEnabled="false"
+                    app:srb_starPadding="2dp"
+                    android:paddingLeft="3dp"
+                    >
+                </com.willy.ratingbar.ScaleRatingBar>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@android:color/transparent"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:onClick="expandable_two"
+                            android:text="Lor  nj hs dcj hd sjfdjc djfd fjdj hcd jdj jd f dbh dbh hdv dhsdbsh dhsdb dhsbd hs"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+
+                        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                            android:id="@+id/expandableLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:ael_duration="500"
+                            app:ael_interpolator="fastOutSlowIn">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="sd dsds dsds dsdsd sss s s sd  dd dd d d d d d d sscs cc cdcsdjcndscjds  jkdndsjkcsd dsjkdsjkcdssd  djsdbdsk"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                />
+                        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="See More"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:layout_marginRight="2dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="10dp"
+            android:background="?android:attr/listDivider" />
+
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="16dp"
+            android:text="Interactions"
+            android:textStyle="bold"
+            />
+
+
+        <org.eazegraph.lib.charts.ValueLineChart
+            android:id="@+id/cubiclinechart2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:egUseCubic="true"
+            app:egUseOverlapFill="true"
+            app:egCurveSmoothness="0.4"
+            app:egIndicatorLineColor="#FE6DA8"
+            app:egLegendHeight="40dp"
+            app:egShowStandardValue="true"
+            android:scaleX="0.95"
+            />
+
+
+        <!--  <com.numetriclabz.numandroidcharts.BarChart
+              android:id="@+id/bc_graph2"
+              android:layout_width="match_parent"
+              android:layout_height="150dp" />-->
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <android.support.v7.widget.CardView
+            android:layout_gravity="center"
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="6dp"
+            android:backgroundTint="@color/grey"
+            >
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="4dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:layout_gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="PROMOTE"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="openpromote"
+                />
+        </android.support.v7.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:paddingTop="10dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What does these means?"
+            android:textColor="@color/blue"
+            android:layout_marginTop="20dp"
+            android:onClick="clickit"
+            />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="clickit"
+            android:src="@drawable/bluearrow"
+            android:paddingRight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="hfajh sbfhasdhfuidb fhsdhfbuids fdhiufzhsiu udfisfhdsui udhfui "
+            android:textColor="@color/grey"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+</ScrollView>

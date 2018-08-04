@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="34dp">
+
+    <TextView
+        android:layout_gravity="start"
+        android:paddingLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:text="Chat"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.v7.widget.CardView
+
+        android:id="@+id/cardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="4dp"
+        android:layout_marginStart="90dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="28"
+
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.CardView>
+        <View
+            android:layout_gravity="center"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider"
+            android:layout_marginLeft="8dp"
+            />
+    <TextView
+        android:layout_gravity="end"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="86dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="8dp"
+        android:text="Booking"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="42dp"
+        >
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:gravity="center"
+            android:text="28"
+            android:textColor="@android:color/white" />
+    </android.support.v7.widget.CardView>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="3dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            style="@style/MaterialSearchBarLight"
+            app:mt_hint="Search here"
+            app:mt_maxSuggestionsCount="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchBar"
+            app:mt_placeholder="Search here"
+            app:mt_menuIconDrawable="@drawable/icon_selector_home_bottom_1"
+
+            />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginTop="1dp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+</LinearLayout>

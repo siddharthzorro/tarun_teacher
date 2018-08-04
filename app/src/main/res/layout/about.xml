@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:background="@color/caribbean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:paddingLeft="25dp"
+        android:textSize="25sp"
+        android:paddingVertical="4.5dp"
+        android:textColor="@color/white"
+        />
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="16dp"
+        android:backgroundTint="@android:color/darker_gray"
+        app:cardCornerRadius="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+    </android.support.v7.widget.CardView>
+
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="50dp">
+
+       <View
+           android:layout_width="100dp"
+           android:layout_height="1dp"
+           android:background="?android:attr/listDivider"
+           android:layout_gravity="center_vertical"
+           />
+       <TextView
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:elevation="3dp"
+           android:textSize="20sp"
+           android:gravity="center"
+           android:layout_gravity="center"
+           android:text="Meet the team"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent" />
+       <View
+           android:layout_width="100dp"
+           android:layout_height="1dp"
+           android:background="?android:attr/listDivider"
+           android:layout_gravity="center_vertical"
+           />
+
+   </LinearLayout>
+
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    >
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp">
+        <ImageView
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+        <ImageView
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+        <ImageView
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <ImageView
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+        <ImageView
+            android:src="@drawable/ic_account_circle_black_24dp"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"/>
+    </LinearLayout>
+</HorizontalScrollView>
+</LinearLayout>

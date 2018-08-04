@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black">#000000</color>
+    <color name="forestgreen">#008080</color>
+    <color name="grey">#808080</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="blue">#73d1da</color>
+    <color name="green">#54867c</color>
+
+    <color name="caribbean">#01a67c</color>
+    <color name="caribbeandark">#006e6e</color>
+
+    <color name="darkgrey">#939393</color>
+    <color name="lightgrey">#efefef</color>
+    <color name="extradarkgrey">#606060</color>
+    <color name="goku">#d0d1d3</color>
+    <color name="vegeta">#6fa6ac</color>
+
+    <color name="lightlightgrey">#f3f3f3</color>
+    <color name="lightGrey">#D3D3D3</color>
+
+    <color name="krilin">#f2f2f3</color>
+    <color name="rankBackground">#039388</color>
+    <color name="ranklayoutback">#f1f2f2</color>
+
+    <color name="green_email">#b6e1bd</color>
+
+    <color name="bckgrnd_colour_signup">#a7dde7</color>
+
+    <color name="back_to_login">#137934</color>
+    </resources>
