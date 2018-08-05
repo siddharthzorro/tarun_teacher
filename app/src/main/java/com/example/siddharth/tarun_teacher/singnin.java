@@ -44,6 +44,7 @@ public class singnin extends AppCompatActivity {
     void gohome() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("userid", mAuth.getUid());
+        Toast.makeText(this,mAuth.getUid()+ "your id is ",Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 
@@ -67,6 +68,7 @@ public class singnin extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("sd", "signInWithEmail:success");
+                                    mAuth = FirebaseAuth.getInstance();
                                     gohome();
 
                                 } else {
@@ -91,15 +93,15 @@ public class singnin extends AppCompatActivity {
     }
 
     public void adduser(View view) {
-        EditText et_name=(EditText) findViewById(R.id.et_s_username);
-        EditText et_pass=(EditText) findViewById(R.id.et_s_pass);
+        EditText et_name = (EditText) findViewById(R.id.et_s_username);
+        EditText et_pass = (EditText) findViewById(R.id.et_s_pass);
 
         if (et_name.getText().toString().isEmpty())
             et_name.setError("fill this");
         else {
             if (et_pass.getText().toString().isEmpty())
                 et_pass.setError("fill this");
-            else{
+            else {
                 mAuth.createUserWithEmailAndPassword(et_name.getText().toString(), et_pass.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -107,9 +109,9 @@ public class singnin extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("ds", "createUserWithEmail:success");
-                                    mAuth=FirebaseAuth.getInstance();
-                                   // gohome();
-                                   MakeStructure.makestruct(mAuth.getUid());
+                                    MakeStructure.makestruct(mAuth.getUid());
+                                    mAuth = FirebaseAuth.getInstance();
+                                    gohome();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("sd", "createUserWithEmail:failure", task.getException());

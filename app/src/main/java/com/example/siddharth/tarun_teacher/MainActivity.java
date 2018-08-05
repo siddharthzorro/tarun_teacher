@@ -35,8 +35,11 @@ import com.daimajia.swipe.SwipeLayout;
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
 import com.eightbitlab.bottomnavigationbar.BottomNavigationBar;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import org.eazegraph.lib.charts.ValueLineChart;
@@ -49,15 +52,24 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerVie;
     Boolean donecounter = false;
     DatabaseReference building;
+    DatabaseReference userdata;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viepager);
+        Bundle data=getIntent().getExtras();
+
+        String userid=data.getString("userid","user1");
         final ViewPager viewPager = findViewById(R.id.vp);
 
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
-        building = firebaseDatabase.getReference("institute").child("building");
+        userdata = firebaseDatabase.getReference("users").child(userid);
+        building = userdata.child("institute").child("building");
+        DatabaseReference review = userdata.child("institute").child("review");
+
+        loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -315,46 +327,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         viewPager.setAdapter(new vpAdapte(getSupportFragmentManager()));
-//        viewPager.setOffscreenPageLimit(2);
-
-//        final BottomNavigationViewEx bnve = findViewById(R.id.bottomNavigationView);
-//        bnve.enableAnimation(false);
-//        bnve.enableItemShiftingMode(true);
-//        bnve.setTextVisibility(false);
-//
-//        bnve.setIconSize(30, 30);
-//        bnve.setupWithViewPager(viewPager);
-//        bnve.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//            Menu menu = bnve.getMenu();
-//            MenuItem item1=menu.getItem(0);
-//            MenuItem item2=menu.getItem(1);
-//            MenuItem item3=menu.getItem(2);
-//
-//            switch (item.getItemId()){
-//                case 0:
-//                    item1.setIcon(R.drawable.accountsettingfilled);
-//                    item2.setIcon(R.mipmap.bookingandchat_foreground);
-//                    item3.setIcon(R.mipmap.insight_foreground);
-//                case 1:
-//                    item2.setIcon(R.drawable.bookingfilled);
-//                    item1.setIcon(R.mipmap.accountsetting_foreground);
-//                    item3.setIcon(R.mipmap.insight_foreground);
-//
-//                case 2:
-//                    item3.setIcon(R.drawable.insightfilled);
-//                    item1.setIcon(R.mipmap.accountsetting_foreground);
-//                    item2.setIcon(R.mipmap.bookingandchat_foreground);
-//
-//            }
-//                return  true;
-//            }
-//        });
 
         BottomBarItem item1 = new BottomBarItem(R.mipmap.accountsetting_foreground);
         BottomBarItem item2 = new BottomBarItem(R.mipmap.bookingandchat_foreground);
         BottomBarItem item3 = new BottomBarItem(R.mipmap.insight_foreground);
+
 
 
         BottomNavigationBar bottomBar = findViewById(R.id.bottom_bar);
@@ -378,6 +355,20 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(dirtyHack, 100);
 
 
+    }
+
+    void loadData(){
+        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+              String s = dataSnapshot.child("building").child("institutename").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void expandable(View view) {
