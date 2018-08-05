@@ -26,6 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
          live.child("rank2").setValue("rank2");
          live.child("rank3").setValue("rank3");
          live.child("rank4").setValue("rahhftyrfytnk3");
+         live.child("rank5").setValue("rank5");
+         live.child("rank6").setValue("rank6");
+         live.child("rank7").setValue("rank7");
 
          devinfo.child("about").child("message").setValue("asyuhsdfsadhgfashklfdh");
          devinfo.child("about").child("link").setValue("https//asyuhsdfsadhgfashklfdh");

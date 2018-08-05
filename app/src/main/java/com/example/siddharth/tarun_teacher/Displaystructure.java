@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class Displaystructure {
         String tv_ins_name;
         String tv_owner_1;
-        String getTv_owner_2;
+        String tv_owner_2;
         Integer ratingbar_homepage;
-        Rank r1,r2,r3,r4,r5,r6,r7;
+        Rank r1,r2;
         Graphdata graphdata;
         Review review1,review2;
         Building building;

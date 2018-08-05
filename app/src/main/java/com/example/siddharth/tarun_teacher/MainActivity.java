@@ -356,14 +356,46 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    Displaystructure d;
 
     void loadData(){
         userdata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-              String s = dataSnapshot.child("building").child("institutename").getValue().toString();
-            }
+                d.tv_ins_name = dataSnapshot.child("building").child("institutename").getValue().toString();
+                d.tv_owner_1 = dataSnapshot.child("building").child("ownername").getValue().toString();
+                d.tv_owner_2 = dataSnapshot.child("building").child("ownername").getValue().toString();
+                d.ratingbar_homepage = Integer.valueOf(dataSnapshot.child("building").child("rating").getValue().toString());
+                d.r1.ins_name = dataSnapshot.child("liveranks").child("rank1").getValue().toString();
+                d.r2.ins_name = dataSnapshot.child("liveranks").child("rank2").getValue().toString();
+                d.r1.rating = Integer.valueOf(dataSnapshot.child("liveranks").child("rank1").getValue().toString());
+                d.r2.rating = Integer.valueOf(dataSnapshot.child("liveranks").child("rank2").getValue().toString());
+                d.r1.position = Integer.valueOf(dataSnapshot.child("liveranks").child("rank1").getValue().toString());
+                d.r2.position = Integer.valueOf(dataSnapshot.child("liveranks").child("rank2").getValue().toString());
+                d.graphdata.v1 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("jan").getValue().toString());
+                d.graphdata.v2 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("feb").getValue().toString());
+                d.graphdata.v3 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("mar").getValue().toString());
+                d.graphdata.v4 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("apr").getValue().toString());
+                d.graphdata.v5 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("may").getValue().toString());
+                d.graphdata.v6 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("jun").getValue().toString());
+                d.graphdata.v7 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("jul").getValue().toString());
+                d.graphdata.v8 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("aug").getValue().toString());
+                d.graphdata.v9 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("sep").getValue().toString());
+                d.graphdata.v10 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("oct").getValue().toString());
+                d.graphdata.v11 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("nov").getValue().toString());
+                d.graphdata.v12 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("dec").getValue().toString());
 
+                d.graphdata.w1 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("mon").getValue().toString());
+                d.graphdata.w2 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("tue").getValue().toString());
+                d.graphdata.w3= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("wed").getValue().toString());
+                d.graphdata.w4= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("thu").getValue().toString());
+                d.graphdata.w5= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("fri").getValue().toString());
+                d.graphdata.w6= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sat").getValue().toString());
+                d.graphdata.w7= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sun").getValue().toString());
+
+
+
+            }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
