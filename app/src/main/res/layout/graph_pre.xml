@@ -39,6 +39,7 @@
             android:paddingLeft="15dp"
             android:text="Monthly Overview"
             android:textStyle="bold"
+            android:onClick="whatdoesoverview"
             />
 
 
@@ -57,6 +58,7 @@
                 app:egIndicatorLineColor="#FE6DA8"
                 app:egLegendHeight="40dp"
                 app:egShowStandardValue="true"
+                android:onClick="whatdoesoverview"
                 />
 
             <LinearLayout
@@ -365,6 +367,8 @@
             android:layout_marginTop="16dp"
             android:text="Interactions"
             android:textStyle="bold"
+            android:onClick="whatdoesinteraction"
+
             />
 
 
@@ -379,6 +383,8 @@
             app:egLegendHeight="40dp"
             app:egShowStandardValue="true"
             android:scaleX="0.95"
+            android:onClick="whatdoesinteraction"
+
             />
 
 
@@ -441,39 +447,6 @@
             android:layout_marginTop="20dp"
             />
 
-        <TextView
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="What does these means?"
-            android:textColor="@color/blue"
-            android:layout_marginTop="20dp"
-            android:onClick="clickit"
-            />
-
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="clickit"
-            android:src="@drawable/bluearrow"
-            android:paddingRight="2dp"
-            android:paddingLeft="2dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            />
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="310dp"
-            android:layout_height="wrap_content"
-            android:text="hfajh sbfhasdhfuidb fhsdhfbuids fdhiufzhsiu udfisfhdsui udhfui "
-            android:textColor="@color/grey"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="10dp"
-            android:visibility="invisible"
-            />
 
     </LinearLayout>
 </ScrollView>

@@ -29,6 +29,7 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.daimajia.swipe.SwipeLayout;
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
@@ -414,6 +415,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void openrateus(View view) {
         startActivity(new Intent(this, rateus.class));
+    }
+
+    public void whatdoesoverview(View view){
+        Toast.makeText(this,"shwhsdvwvdvd",Toast.LENGTH_SHORT).show();
+    }
+    public void whatdoesinteraction(View view){
+        Toast.makeText(this,"dshdvgsd dsgsvd",Toast.LENGTH_SHORT).show();
     }
 
     public void clickit(View view) {

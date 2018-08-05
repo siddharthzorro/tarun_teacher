@@ -61,10 +61,14 @@ import com.google.firebase.database.FirebaseDatabase;
          users.child(userid).child("institute").child("review").child("review1").child("name").setValue("name1");
          users.child(userid).child("institute").child("review").child("review1").child("rating").setValue("3");
          users.child(userid).child("institute").child("review").child("review1").child("comment").setValue("yo yo");
+         users.child(userid).child("institute").child("review").child("review1").child("subject").setValue("yo yocdnjdj");
+
 
          users.child(userid).child("institute").child("review").child("review2").child("name").setValue("name1");
          users.child(userid).child("institute").child("review").child("review2").child("rating").setValue("3");
          users.child(userid).child("institute").child("review").child("review2").child("comment").setValue("yo yo");
+         users.child(userid).child("institute").child("review").child("review2").child("subject").setValue("asvxgs");
+
 
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jan").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("feb").setValue("2");
