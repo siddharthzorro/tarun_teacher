@@ -5,15 +5,24 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import java.net.URL;
+import java.util.ArrayList;
+
 public class Displaystructure {
-        TextView tv_ins_name;
-        TextView tv_owner_1;
-        TextView getTv_owner_2;
+        String tv_ins_name;
+        String tv_owner_1;
+        String getTv_owner_2;
         Integer ratingbar_homepage;
         Rank r1,r2,r3,r4,r5,r6,r7;
         Graphdata graphdata;
-
-
+        Review review1,review2;
+        Building building;
+        Infoabout infoabout;
+        Infofeedback infofeedback;
+        Inforateus inforateus;
+        Infocontact infocontact1,infocontact2,infocontact3,infocontact4;
+        Promotedisplay promotedisplay;
+        ArrayList<Notification> notifications;
 
 }
   class Rank {
@@ -27,7 +36,42 @@ public class Displaystructure {
      Integer w1,w2,w3,w4,w5,w6,w7;
   }
   class Review{
-    String comment1,subject1,comeent2,subject2;
+    String comment,subject;
+    Integer ratebar;
 
-
+  }
+  class Building{
+    String ins_name,about,office_num,website;
+    ArrayList<Subject> subjects;
+    Boolean switch1,switch2;
+//  todo attach google maps
+  }
+  class Subject{
+    String subject,teacher;
+  }
+  class Infoabout{
+    URL url1,url2,url3,url4;
+  }
+  class Infocontact{
+    String location,phnum;
+  }
+  class Infofeedback{
+    URL u1,u2,u3,u4;
+  }
+  class Inforateus{
+    URL u;
+    Integer num_stars;
+  }
+  class Promotedisplay{
+   Integer radius,duration;
+   String area;
+   Boolean postpromotion,profilepromotion;
+   ArrayList<Postpromotion> pstprom;
+  }
+  class Postpromotion{
+   URL link;
+   String description,photolink;
+  }
+  class Notification{
+    String time,body,header;
   }
