@@ -46,6 +46,8 @@ import org.eazegraph.lib.charts.ValueLineChart;
 import org.eazegraph.lib.models.ValueLinePoint;
 import org.eazegraph.lib.models.ValueLineSeries;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
     LayoutInflater inflater; //recycler view booking
     Integer countOfName = 0;
@@ -392,6 +394,53 @@ public class MainActivity extends AppCompatActivity {
                 d.graphdata.w5= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("fri").getValue().toString());
                 d.graphdata.w6= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sat").getValue().toString());
                 d.graphdata.w7= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sun").getValue().toString());
+
+                d.review1.name=dataSnapshot.child("institute").child("review").child("review1").child("name").getValue().toString();
+                d.review1.comment=dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString();
+                d.review1.subject=dataSnapshot.child("institute").child("review").child("review1").child("subject").getValue().toString();
+                d.review1.ratebar=Integer.valueOf(dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString());
+
+                d.review2.name=dataSnapshot.child("institute").child("review").child("review2").child("name").getValue().toString();
+                d.review2.comment=dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString();
+                d.review2.subject=dataSnapshot.child("institute").child("review").child("review2").child("subject").getValue().toString();
+                d.review2.ratebar=Integer.valueOf(dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString());
+
+                d.building.ins_name=dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
+                d.building.about=dataSnapshot.child("institute").child("building").child("about").getValue().toString();
+                d.building.office_num=dataSnapshot.child("institute").child("building").child("officenumber").getValue().toString();
+              //  d.building.website=dataSnapshot.child("institute").child("building").child("website").getValue().toString();
+
+                //todo add arraylist subjects and class subjects
+
+//                d.infoabout.url1=dataSnapshot.child("devinfo").child("about").child("link1").getValue().toString();
+//                d.infoabout.url1=dataSnapshot.child("devinfo").child("about").child("link2").getValue().toString();
+//                d.infoabout.url1=dataSnapshot.child("devinfo").child("about").child("link3").getValue().toString();
+//                d.infoabout.url1=dataSnapshot.child("devinfo").child("about").child("link4").getValue().toString();
+
+//            d.infofeedback.u1=dataSnapshot.child("devinfo").child("feedback").child("link1").getValue().toString();
+//                d.infofeedback.u2=dataSnapshot.child("devinfo").child("feedback").child("link2").getValue().toString();
+//                d.infofeedback.u3=dataSnapshot.child("devinfo").child("feedback").child("link3").getValue().toString();
+//                d.infofeedback.u4=dataSnapshot.child("devinfo").child("feedback").child("link4").getValue().toString();
+
+//               d.inforateus.u=dataSnapshot.child("devinfo").child("rateus").child("link1").getValue().toString();
+                d.inforateus.num_stars=Integer.valueOf(dataSnapshot.child("devinfo").child("rateus").child("stars").getValue().toString());
+
+                d.infocontact1.location=dataSnapshot.child("devinfo").child("contactus").child("state1").getValue().toString();
+                d.infocontact2.location=dataSnapshot.child("devinfo").child("contactus").child("state2").getValue().toString();
+                d.infocontact3.location=dataSnapshot.child("devinfo").child("contactus").child("state3").getValue().toString();
+                d.infocontact4.location=dataSnapshot.child("devinfo").child("contactus").child("state4").getValue().toString();
+                d.infocontact1.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone1").getValue().toString();
+                d.infocontact2.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone2").getValue().toString();
+                d.infocontact3.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone3").getValue().toString();
+                d.infocontact4.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone4").getValue().toString();
+
+                d.promotedisplay.area=dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString();
+                d.promotedisplay.radius=Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString());
+                d.promotedisplay.duration=Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString());
+
+//todo postpromotion
+//todo notification
+
 
             }
             @Override

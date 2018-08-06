@@ -31,12 +31,21 @@ import com.google.firebase.database.FirebaseDatabase;
          live.child("rank7").setValue("rank7");
 
          devinfo.child("about").child("message").setValue("asyuhsdfsadhgfashklfdh");
-         devinfo.child("about").child("link").setValue("https//asyuhsdfsadhgfashklfdh");
+         devinfo.child("about").child("link1").setValue("https//asyuhsdfsadhgfashklfdh");
+         devinfo.child("about").child("link2").setValue("https//asyuhsdfsadhgfashklfdh");
+         devinfo.child("about").child("link3").setValue("https//asyuhsdfsadhgfashklfdh");
+         devinfo.child("about").child("link4").setValue("https//asyuhsdfsadhgfashklfdh");
 
-         devinfo.child("contactus").child("state1").setValue("9958442265");
-         devinfo.child("contactus").child("state2").setValue("9958442265");
-         devinfo.child("contactus").child("state3").setValue("9958442265");
-         devinfo.child("contactus").child("state4").setValue("9958442265");
+
+         devinfo.child("contactus").child("state1").setValue("delhi");
+         devinfo.child("contactus").child("state2").setValue("delhi");
+         devinfo.child("contactus").child("state3").setValue("delhi");
+         devinfo.child("contactus").child("state4").setValue("delhi");
+         devinfo.child("contactus").child("phone1").setValue("delhi");
+         devinfo.child("contactus").child("phone2").setValue("delhi");
+         devinfo.child("contactus").child("phone3").setValue("delhi");
+         devinfo.child("contactus").child("phone4").setValue("delhi");
+
 
          devinfo.child("feedback").child("link1").setValue("socialmedia1");
          devinfo.child("feedback").child("link2").setValue("socialmedia2");
@@ -44,6 +53,7 @@ import com.google.firebase.database.FirebaseDatabase;
          devinfo.child("feedback").child("link4").setValue("socialmedia4");
 
          devinfo.child("rateus").child("stars").setValue("3");
+         devinfo.child("rateus").child("link").setValue("https//efhdf");
 
          users.child(userid).child("institute").child("building").child("institutename").setValue("FiitJee");
          users.child(userid).child("institute").child("building").child("about").setValue("we are 6s");

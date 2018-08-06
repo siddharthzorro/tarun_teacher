@@ -36,12 +36,13 @@ public class Displaystructure {
      Integer w1,w2,w3,w4,w5,w6,w7;
   }
   class Review{
-    String comment,subject;
+    String comment,subject,name;
     Integer ratebar;
 
   }
   class Building{
-    String ins_name,about,office_num,website;
+    String ins_name,about,office_num;
+    URL website;
     ArrayList<Subject> subjects;
     Boolean switch1,switch2;
 //  todo attach google maps
