@@ -393,8 +393,6 @@ public class MainActivity extends AppCompatActivity {
                 d.graphdata.w6= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sat").getValue().toString());
                 d.graphdata.w7= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sun").getValue().toString());
 
-
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
