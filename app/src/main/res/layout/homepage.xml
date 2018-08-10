@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cl"
     android:layout_width="match_parent"
@@ -9,8 +9,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sc1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="90dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +103,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-45dp"
                     android:layout_marginTop="20dp"
-                    android:paddingLeft="-5dp"
                     android:paddingTop="20dp"
                     android:scaleX="0.6"
                     android:scaleY="0.6"
@@ -146,6 +145,7 @@
         </LinearLayout>
     </ScrollView>
 
+<!--
     <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/sample3"
         android:layout_width="match_parent"
@@ -156,7 +156,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         >
-        <!--show on revelal-->
+        &lt;!&ndash;show on revelal&ndash;&gt;
         <LinearLayout
 android:id="@+id/llsv_d"
             android:layout_width="match_parent"
@@ -165,249 +165,10 @@ android:id="@+id/llsv_d"
             android:orientation="vertical"
             android:tag="Bottom3">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/ranklayoutback">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_margin="8dp"
-                        app:cardElevation="0dp"
-                        app:cardCornerRadius="6dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="8dp"
-                                android:text="RANK1"
-                                android:textColor="#58595b"
-                                android:textSize="15sp" />
-
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="start|top"
-                                android:paddingRight="8dp"
-                                app:srb_clearRatingEnabled="false"
-                                app:srb_clickable="false"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="2"
-                                app:srb_scrollable="false"
-                                app:srb_starHeight="12dp"
-                                app:srb_starPadding="2dp"
-                                app:srb_starWidth="12dp"
-                                app:srb_stepSize="0.5" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_margin="8dp"
-                        app:cardElevation="0dp"
-                        app:cardCornerRadius="6dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="8dp"
-                                android:text="RANK1"
-                                android:textColor="#58595b"
-                                android:textSize="15sp" />
-
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="start|top"
-                                android:paddingRight="8dp"
-                                app:srb_clearRatingEnabled="false"
-                                app:srb_clickable="false"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="2"
-                                app:srb_scrollable="false"
-                                app:srb_starHeight="12dp"
-                                app:srb_starPadding="2dp"
-                                app:srb_starWidth="12dp"
-                                app:srb_stepSize="0.5" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_margin="8dp"
-                        app:cardElevation="0dp"
-                        app:cardCornerRadius="6dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="8dp"
-                                android:text="RANK1"
-                                android:textColor="#58595b"
-                                android:textSize="15sp" />
-
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="start|top"
-                                android:paddingRight="8dp"
-                                app:srb_clearRatingEnabled="false"
-                                app:srb_clickable="false"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="2"
-                                app:srb_scrollable="false"
-                                app:srb_starHeight="12dp"
-                                app:srb_starPadding="2dp"
-                                app:srb_starWidth="12dp"
-                                app:srb_stepSize="0.5" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_margin="8dp"
-                        app:cardElevation="0dp"
-                        app:cardCornerRadius="6dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="8dp"
-                                android:text="RANK1"
-                                android:textColor="#58595b"
-                                android:textSize="15sp" />
-
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="start|top"
-                                android:paddingRight="8dp"
-                                app:srb_clearRatingEnabled="false"
-                                app:srb_clickable="false"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="2"
-                                app:srb_scrollable="false"
-                                app:srb_starHeight="12dp"
-                                app:srb_starPadding="2dp"
-                                app:srb_starWidth="12dp"
-                                app:srb_stepSize="0.5" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_margin="8dp"
-                        app:cardElevation="0dp"
-                        app:cardCornerRadius="6dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:gravity="center_vertical"
-                                android:paddingLeft="8dp"
-                                android:text="RANK1"
-                                android:textColor="#58595b"
-                                android:textSize="15sp" />
-
-                            <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginBottom="8dp"
-                                android:gravity="start|top"
-                                android:paddingRight="8dp"
-                                app:srb_clearRatingEnabled="false"
-                                app:srb_clickable="false"
-                                app:srb_isIndicator="false"
-                                app:srb_minimumStars="1"
-                                app:srb_numStars="5"
-                                app:srb_rating="2"
-                                app:srb_scrollable="false"
-                                app:srb_starHeight="12dp"
-                                app:srb_starPadding="2dp"
-                                app:srb_starWidth="12dp"
-                                app:srb_stepSize="0.5" />
-
-                        </RelativeLayout>
-                    </android.support.v7.widget.CardView>
-
-                </LinearLayout>
-
-            </ScrollView>
 
 
         </LinearLayout>
-        <!--show without reveal-->
+        &lt;!&ndash;show without reveal&ndash;&gt;
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -443,23 +204,7 @@ android:id="@+id/llsv_d"
 
         </RelativeLayout>
     </com.daimajia.swipe.SwipeLayout>
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/forestgreen"
-        android:gravity="center_vertical"
-        android:onClick="openpromote"
-        android:paddingLeft="10dp"
-        android:text="Promote"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+-->
 
     <!--
         <ImageView
@@ -476,5 +221,295 @@ android:id="@+id/llsv_d"
             app:srcCompat="@android:drawable/ic_dialog_info" />
     -->
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:padding="@dimen/activity_vertical_margin"
+        app:behavior_peekHeight="100dp"
+        android:layout_marginBottom="50dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <TextView
+            android:id="@+id/bottomSheetHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ranks"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottomSheetHeading"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="@string/text_welcome_message"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+
+        <ScrollView
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/bottomSheetHeading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ranklayoutback">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="RANK1"
+                            android:textColor="#58595b"
+                            android:textSize="15sp" />
+
+                        <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start|top"
+                            android:paddingRight="8dp"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_clickable="false"
+                            app:srb_isIndicator="false"
+                            app:srb_minimumStars="1"
+                            app:srb_numStars="5"
+                            app:srb_rating="2"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="2dp"
+                            app:srb_starWidth="12dp"
+                            app:srb_stepSize="0.5" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="RANK1"
+                            android:textColor="#58595b"
+                            android:textSize="15sp" />
+
+                        <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start|top"
+                            android:paddingRight="8dp"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_clickable="false"
+                            app:srb_isIndicator="false"
+                            app:srb_minimumStars="1"
+                            app:srb_numStars="5"
+                            app:srb_rating="2"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="2dp"
+                            app:srb_starWidth="12dp"
+                            app:srb_stepSize="0.5" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="RANK1"
+                            android:textColor="#58595b"
+                            android:textSize="15sp" />
+
+                        <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start|top"
+                            android:paddingRight="8dp"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_clickable="false"
+                            app:srb_isIndicator="false"
+                            app:srb_minimumStars="1"
+                            app:srb_numStars="5"
+                            app:srb_rating="2"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="2dp"
+                            app:srb_starWidth="12dp"
+                            app:srb_stepSize="0.5" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="RANK1"
+                            android:textColor="#58595b"
+                            android:textSize="15sp" />
+
+                        <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start|top"
+                            android:paddingRight="8dp"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_clickable="false"
+                            app:srb_isIndicator="false"
+                            app:srb_minimumStars="1"
+                            app:srb_numStars="5"
+                            app:srb_rating="2"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="2dp"
+                            app:srb_starWidth="12dp"
+                            app:srb_stepSize="0.5" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="6dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="8dp"
+                            android:text="RANK1"
+                            android:textColor="#58595b"
+                            android:textSize="15sp" />
+
+                        <com.willy.ratingbar.ScaleRatingBar xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start|top"
+                            android:paddingRight="8dp"
+                            app:srb_clearRatingEnabled="false"
+                            app:srb_clickable="false"
+                            app:srb_isIndicator="false"
+                            app:srb_minimumStars="1"
+                            app:srb_numStars="5"
+                            app:srb_rating="2"
+                            app:srb_scrollable="false"
+                            app:srb_starHeight="12dp"
+                            app:srb_starPadding="2dp"
+                            app:srb_starWidth="12dp"
+                            app:srb_stepSize="0.5" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_gravity="bottom"
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/forestgreen"
+        android:gravity="center_vertical"
+        android:onClick="openpromote"
+        android:paddingLeft="10dp"
+        android:text="Promote"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.design.widget.CoordinatorLayout>
 

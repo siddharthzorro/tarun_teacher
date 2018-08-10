@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@color/grey"
+            android:layout_marginLeft="8dp"
+            />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Tarun"
+                android:textColor="@android:color/black" />
+
+            <com.willy.ratingbar.ScaleRatingBar
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srb_numStars="5"
+                android:gravity="start|top"
+                app:srb_minimumStars="1"
+                app:srb_rating="2"
+                app:srb_starWidth="12dp"
+                app:srb_starHeight="12dp"
+                app:srb_stepSize="0.5"
+                app:srb_isIndicator="false"
+                app:srb_clickable="false"
+                app:srb_scrollable="false"
+                app:srb_clearRatingEnabled="false"
+                app:srb_starPadding="2dp"
+                android:paddingLeft="3dp"
+
+                >
+            </com.willy.ratingbar.ScaleRatingBar>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/unexpanded_text_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:onClick="expandable"
+                        android:text="Lor  nj hs dcj hd sjfdjc djfd fjdj hcd jdj jd f dbh dbh hdv dhsdbsh dhsdb dhsbd hs"
+                        android:textColor="@android:color/black"
+                        android:textSize="12sp" />
+
+                    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                        android:id="@+id/expandableLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:ael_duration="500"
+                        app:ael_interpolator="fastOutSlowIn">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="sd dsds dsds dsdsd sss s s sd  dd dd d d d d d d sscs cc cdcsdjcndscjds  jkdndsjkcsd dsjkdsjkcdssd  djsdbdsk"
+                            android:textSize="12sp"
+                            android:textColor="@color/black"
+                            />
+                    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+

@@ -1,104 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
+<com.andexert.library.RippleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rplview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="8dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
 
     <LinearLayout
-       android:contextClickable="true"
-       android:focusable="true"
-        android:paddingLeft="12dp"
-    android:paddingRight="12dp"
-         xmlns:app="http://schemas.android.com/apk/res-auto"
-         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-           <LinearLayout
-               android:orientation="vertical"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content">
-
-            <android.support.design.widget.CoordinatorLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginLeft="5dp"
+                android:text="Tarun"
+                android:textColor="@android:color/black" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                app:cardCornerRadius="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tarun"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@android:color/black" />
+                    android:background="@android:color/darker_gray"
+                    android:padding="2dp"
+                    android:text="4:43 Pm"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </android.support.v7.widget.CardView>
+        </android.support.design.widget.CoordinatorLayout>
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="4dp"
-                    android:layout_gravity="end"
-                    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@android:color/darker_gray"
-                        android:padding="2dp"
-                        android:text="4:43 Pm"
-                        android:textColor="@android:color/white"
-                        android:textSize="10sp" />
-                </android.support.v7.widget.CardView>
-            </android.support.design.widget.CoordinatorLayout>
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <android.support.v7.widget.CardView
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:backgroundTint="@android:color/transparent"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardCornerRadius="5dp"
-                    android:layout_marginTop="3dp"
-                    app:cardElevation="0dp"
-                    android:backgroundTint="@android:color/transparent"
-                    android:layout_marginLeft="5dp"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Lor  nj hs dcj hd sjfdjc djfd fjdj hcd jdj jd f dbh dbh hdv dhsdbsh dhsdb dhsbd hs"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp"
-                        />
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-           </LinearLayout>
-
+                    android:text="Lor  nj hs dcj hd sjfdjc djfd fjdj hcd jdj jd f dbh dbh hdv dhsdbsh dhsdb dhsbd hs"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-
-        <!--<android.support.v7.widget.CardView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:cardCornerRadius="5dp"-->
-            <!--android:layout_marginTop="3dp"-->
-            <!--app:cardElevation="0dp"-->
-            <!--android:backgroundTint="@android:color/transparent"-->
-            <!--&gt;-->
-
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Lor  nj jn m jm jm uem hgchghhghhghepsum tis dff s aysuh kuy fsd f a adf"-->
-                <!--android:textColor="@android:color/black"-->
-                <!--android:textSize="12sp"-->
-                <!--/>-->
-        <!--</android.support.v7.widget.CardView>-->
-
     </LinearLayout>
+</com.andexert.library.RippleView>
 

@@ -42,9 +42,10 @@ public class singnin extends AppCompatActivity {
     }
 
     void gohome() {
+        currentUser=mAuth.getCurrentUser();
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("userid", mAuth.getUid());
-        Toast.makeText(this,mAuth.getUid()+ "your id is ",Toast.LENGTH_SHORT).show();
+        intent.putExtra("userid", currentUser.getUid());
+        Toast.makeText(this,currentUser.getEmail()+ "your id is ",Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

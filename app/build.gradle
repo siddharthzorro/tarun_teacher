@@ -44,6 +44,8 @@ dependencies {
 
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
 
+
+
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
 
     implementation 'com.github.ome450901:SimpleRatingBar:1.4.2' //rating bar
@@ -57,6 +59,7 @@ dependencies {
 
     implementation 'com.github.blackfizz:eazegraph:1.2.2@aar'
     implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.github.emanzanoaxa:RippleEffect:52ea2a0ab6'
 }
 
 apply plugin: 'com.google.gms.google-services'

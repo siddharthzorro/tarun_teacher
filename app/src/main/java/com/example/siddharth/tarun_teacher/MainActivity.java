@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -31,6 +32,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andexert.library.RippleView;
 import com.daimajia.swipe.SwipeLayout;
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
 import com.eightbitlab.bottomnavigationbar.BottomNavigationBar;
@@ -47,6 +49,7 @@ import org.eazegraph.lib.models.ValueLinePoint;
 import org.eazegraph.lib.models.ValueLineSeries;
 
 import java.net.URL;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     LayoutInflater inflater; //recycler view booking
@@ -55,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
     Boolean donecounter = false;
     DatabaseReference building;
     DatabaseReference userdata;
+
+    // BottomSheetBehavior variable
+    private BottomSheetBehavior bottomSheetBehavior;
+
+    // TextView variable
+    private TextView bottomSheetHeading;
 
 
     @Override
@@ -66,12 +75,13 @@ public class MainActivity extends AppCompatActivity {
         String userid=data.getString("userid","user1");
         final ViewPager viewPager = findViewById(R.id.vp);
 
+
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
         userdata = firebaseDatabase.getReference("users").child(userid);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-        loadData();
+       // loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -90,26 +100,29 @@ public class MainActivity extends AppCompatActivity {
 
                         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                         setSupportActionBar(toolbar);
-                        final ConstraintLayout layout = findViewById(R.id.cl);
-                        layout.bringChildToFront(findViewById(R.id.sc1));
-                        SwipeLayout sample3 = (SwipeLayout) findViewById(R.id.sample3);
-                        //given id here in second parameter is id of view you want to show when reveling not by default
-                        //everything else is visible by itself
-                        sample3.addDrag(SwipeLayout.DragEdge.Right, sample3.findViewWithTag("Bottom2"));
+//                        final ConstraintLayout layout = findViewById(R.id.cl);
+//                        layout.bringChildToFront(findViewById(R.id.sc1));
+//                        SwipeLayout sample3 = (SwipeLayout) findViewById(R.id.sample3);
+//                        //given id here in second parameter is id of view you want to show when reveling not by default
+//                        //everything else is visible by itself
+//                        sample3.addDrag(SwipeLayout.DragEdge.Right, sample3.findViewWithTag("Bottom2"));
+//
+//                        sample3.addDrag(SwipeLayout.DragEdge.Bottom, sample3.findViewWithTag("Bottom3"));
+//                        sample3.addRevealListener(R.id.llsv_d, new SwipeLayout.OnRevealListener() {
+//                            @Override
+//                            public void onReveal(View child, SwipeLayout.DragEdge edge, float fraction, int distance) {
+//                                layout.bringChildToFront(findViewById(R.id.sample3));
+//
+//                                if (fraction == 1)
+//                                    layout.bringChildToFront(findViewById(R.id.sample3));
+//                                else
+//                                    layout.bringChildToFront(findViewById(R.id.sc1));
+//
+//                            }
+//                        });
 
-                        sample3.addDrag(SwipeLayout.DragEdge.Bottom, sample3.findViewWithTag("Bottom3"));
-                        sample3.addRevealListener(R.id.llsv_d, new SwipeLayout.OnRevealListener() {
-                            @Override
-                            public void onReveal(View child, SwipeLayout.DragEdge edge, float fraction, int distance) {
-                                layout.bringChildToFront(findViewById(R.id.sample3));
-
-                                if (fraction == 1)
-                                    layout.bringChildToFront(findViewById(R.id.sample3));
-                                else
-                                    layout.bringChildToFront(findViewById(R.id.sc1));
-
-                            }
-                        });
+                        bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayout));
+                        bottomSheetHeading = (TextView) findViewById(R.id.bottomSheetHeading);
                         final Float rating = 2.5f;
                         final RatingBar rate_bar = findViewById(R.id.rating_homepage);
                         rate_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -207,30 +220,30 @@ public class MainActivity extends AppCompatActivity {
                         donecounter = true;
 
 
-                        recyclerVie = findViewById(R.id.rv);
-                        recyclerVie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                        recyclerVie.setAdapter(new RecyclerView.Adapter() {
-                            @NonNull
-                            @Override
-                            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                                return new RecyclerView.ViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.homepage_holder, parent, false)) {
-                                    @Override
-                                    public String toString() {
-                                        return super.toString();
-                                    }
-                                };
-                            }
-
-                            @Override
-                            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-                            }
-
-                            @Override
-                            public int getItemCount() {
-                                return countOfName;
-                            }
-                        });
+//                        recyclerVie = findViewById(R.id.rv);
+//                        recyclerVie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+//                        recyclerVie.setAdapter(new RecyclerView.Adapter() {
+//                            @NonNull
+//                            @Override
+//                            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//                                return new RecyclerView.ViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.homepage_holder, parent, false)) {
+//                                    @Override
+//                                    public String toString() {
+//                                        return super.toString();
+//                                    }
+//                                };
+//                            }
+//
+//                            @Override
+//                            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+//
+//                            }
+//
+//                            @Override
+//                            public int getItemCount() {
+//                                return countOfName;
+//                            }
+//                        });
 
                         break;
                     case 1:
@@ -248,13 +261,16 @@ public class MainActivity extends AppCompatActivity {
                             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                                 View view;
                                 view = inflater.inflate(R.layout.booking_holder, viewGroup, false);
-                                view.setOnLongClickListener(new View.OnLongClickListener() {
-                                    @Override
-                                    public boolean onLongClick(View view) {
-                                        Log.d("ijhj", "onLongClick: jhg");
-                                        return true;
-                                    }
-                                });
+//                                RippleView rippleView;
+//                                rippleView = findViewById(R.id.rplview);
+//                                rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+//
+//                                    @Override
+//                                    public void onComplete(RippleView rippleView) {
+//                                        Log.d("Sample", "Ripple completed");
+//                                    }
+//
+//                                });
                                 final RecyclerView.ViewHolder viewHolder = new RecyclerView.ViewHolder(view) {
                                     @Override
                                     public String toString() {
@@ -266,7 +282,16 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-
+//                                RippleView rippleView;
+//                                rippleView = findViewById(R.id.rplview);
+//                                rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+//
+//                                    @Override
+//                                    public void onComplete(RippleView rippleView) {
+//                                        Log.d("Sample", "Ripple completed");
+//                                    }
+//
+//                                });
                             }
 
                             @Override
@@ -357,6 +382,8 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(dirtyHack, 100);
 
 
+
+
     }
     Displaystructure d;
 
@@ -364,7 +391,7 @@ public class MainActivity extends AppCompatActivity {
         userdata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                d.tv_ins_name = dataSnapshot.child("building").child("institutename").getValue().toString();
+                d.tv_ins_name = Objects.requireNonNull(dataSnapshot.child("building").child("institutename").getValue()).toString();
                 d.tv_owner_1 = dataSnapshot.child("building").child("ownername").getValue().toString();
                 d.tv_owner_2 = dataSnapshot.child("building").child("ownername").getValue().toString();
                 d.ratingbar_homepage = Integer.valueOf(dataSnapshot.child("building").child("rating").getValue().toString());
@@ -542,6 +569,10 @@ public class MainActivity extends AppCompatActivity {
         if(switch1.isChecked()==switch2.isChecked())
             return  false;
         else return true;
+    }
+
+    public void openSeeMore(View view) {
+        startActivity(new Intent(this,Reviews_full.class));
     }
 
     class vpAdapte extends FragmentPagerAdapter {

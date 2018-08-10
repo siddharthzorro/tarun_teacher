@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by Ayush on __Date__
@@ -28,12 +29,14 @@ public class RecyclerViewX extends RecyclerView {
         super(context, attrs, defStyle);
     }
 
+
     /**
      *
      * @param count total no of holder to be displayed
      * @param vhResId layout resource id of view Holder
      * @param context pass this pointer from calling class
      */
+
     public void addAdapter(final int count, final int vhResId, final Context context){
         Adapter adapter= new Adapter() {
             @NonNull
@@ -57,6 +60,7 @@ public class RecyclerViewX extends RecyclerView {
                 return count;
             }
         } ;
+
         setLayoutManager(new LinearLayoutManager(context));
         setAdapter(adapter);
     }

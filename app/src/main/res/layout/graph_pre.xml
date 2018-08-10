@@ -348,6 +348,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="See More"
+            android:onClick="openSeeMore"
             android:textColor="@color/blue"
             android:textSize="12sp"
             android:layout_marginRight="2dp"
