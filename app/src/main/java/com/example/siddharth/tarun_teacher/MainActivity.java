@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
@@ -16,7 +17,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView bottomSheetHeading;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +87,19 @@ public class MainActivity extends AppCompatActivity {
         userdata = firebaseDatabase.getReference("users").child(userid);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
+
+//        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bnve);
+//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
+//        for (int i = 0; i < menuView.getChildCount(); i++) {
+//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
+//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
+//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+//            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
+//            iconView.setLayoutParams(layoutParams);
+//        }
+
+
 
         // loadData();
 
@@ -135,92 +152,92 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         rate_bar.setRating(rating);
-                        final BottomNavigationView navigationView = findViewById(R.id.bnve);
-
-                        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                            @Override
-                            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                                View layout1 = findViewById(R.id.tab1);
-                                View layout2 = findViewById(R.id.tab2);
-                                View layout3 = findViewById(R.id.tab3);
-                                Menu menu2 = navigationView.getMenu();
-                                MenuItem item11 = menu2.getItem(0);
-                                MenuItem item12 = menu2.getItem(1);
-                                MenuItem item13 = menu2.getItem(2);
-
-                                switch (menuItem.getItemId()) {
-                                    case R.id.menuprofile:
-
-                                        layout1.setVisibility(View.VISIBLE);
-                                        layout2.setVisibility(View.GONE);
-                                        layout3.setVisibility(View.GONE);
-                                        item11.setIcon(R.drawable.profileownerfilled);
-                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
-                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
-                                        return true;
-                                    case R.id.menubuild:
-                                        Log.d("mn", "onNavigationItemSelected: 2");
-                                        layout1.setVisibility(View.GONE);
-                                        layout2.setVisibility(View.VISIBLE);
-                                        layout3.setVisibility(View.GONE);
-                                        item12.setIcon(R.drawable.institutefilled);
-                                        item11.setIcon(R.drawable.icon_selector_home1);
-                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
-
-                                        final Switch myswitch2 = findViewById(R.id.building_switch_direct);
-
-                                        final Switch myswitch1 = findViewById(R.id.building_switch_entrance_based);
-                                        myswitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                if (isChecked) {
-                                                    myswitch2.setChecked(false);
-                                                }
-                                                // true if the switch is in the On position
-                                            }
-                                        });
-                                        myswitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                if (isChecked) {
-                                                    myswitch1.setChecked(false);
-                                                }
-                                                // true if the switch is in the On position
-                                            }
-                                        });
-                                        final Switch myswitch4 = findViewById(R.id.building_switch_hom_tuition);
-
-                                        final Switch myswitch3 = findViewById(R.id.building_switch_grp_tuition);
-                                        myswitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                if (isChecked) {
-                                                    myswitch4.setChecked(false);
-                                                }
-                                                // true if the switch is in the On position
-                                            }
-                                        });
-                                        myswitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                if (isChecked) {
-                                                    myswitch3.setChecked(false);
-                                                }
-                                                // true if the switch is in the On position
-                                            }
-                                        });
-                                        return true;
-                                    case R.id.menuinfo:
-
-                                        layout1.setVisibility(View.GONE);
-                                        layout2.setVisibility(View.GONE);
-                                        layout3.setVisibility(View.VISIBLE);
-                                        item13.setIcon(R.drawable.infofilled);
-                                        item11.setIcon(R.drawable.icon_selector_home1);
-                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
-
-                                        return true;
-                                }
-                                return true;
-                            }
-                        });
-                        donecounter = true;
+//                        final BottomNavigationView navigationView = findViewById(R.id.bnve);
+//
+//                        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//                            @Override
+//                            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//                                View layout1 = findViewById(R.id.tab1);
+//                                View layout2 = findViewById(R.id.tab2);
+//                                View layout3 = findViewById(R.id.tab3);
+//                                Menu menu2 = navigationView.getMenu();
+//                                MenuItem item11 = menu2.getItem(0);
+//                                MenuItem item12 = menu2.getItem(1);
+//                                MenuItem item13 = menu2.getItem(2);
+//
+//                                switch (menuItem.getItemId()) {
+//                                    case R.id.menuprofile:
+//
+//                                        layout1.setVisibility(View.VISIBLE);
+//                                        layout2.setVisibility(View.GONE);
+//                                        layout3.setVisibility(View.GONE);
+//                                        item11.setIcon(R.drawable.profileownerfilled);
+//                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
+//                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
+//                                        return true;
+//                                    case R.id.menubuild:
+//                                        Log.d("mn", "onNavigationItemSelected: 2");
+//                                        layout1.setVisibility(View.GONE);
+//                                        layout2.setVisibility(View.VISIBLE);
+//                                        layout3.setVisibility(View.GONE);
+//                                        item12.setIcon(R.drawable.institutefilled);
+//                                        item11.setIcon(R.drawable.icon_selector_home1);
+//                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
+//
+//                                        final Switch myswitch2 = findViewById(R.id.building_switch_direct);
+//
+//                                        final Switch myswitch1 = findViewById(R.id.building_switch_entrance_based);
+//                                        myswitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                                                if (isChecked) {
+//                                                    myswitch2.setChecked(false);
+//                                                }
+//                                                // true if the switch is in the On position
+//                                            }
+//                                        });
+//                                        myswitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                                                if (isChecked) {
+//                                                    myswitch1.setChecked(false);
+//                                                }
+//                                                // true if the switch is in the On position
+//                                            }
+//                                        });
+//                                        final Switch myswitch4 = findViewById(R.id.building_switch_hom_tuition);
+//
+//                                        final Switch myswitch3 = findViewById(R.id.building_switch_grp_tuition);
+//                                        myswitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                                                if (isChecked) {
+//                                                    myswitch4.setChecked(false);
+//                                                }
+//                                                // true if the switch is in the On position
+//                                            }
+//                                        });
+//                                        myswitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                                                if (isChecked) {
+//                                                    myswitch3.setChecked(false);
+//                                                }
+//                                                // true if the switch is in the On position
+//                                            }
+//                                        });
+//                                        return true;
+//                                    case R.id.menuinfo:
+//
+//                                        layout1.setVisibility(View.GONE);
+//                                        layout2.setVisibility(View.GONE);
+//                                        layout3.setVisibility(View.VISIBLE);
+//                                        item13.setIcon(R.drawable.infofilled);
+//                                        item11.setIcon(R.drawable.icon_selector_home1);
+//                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
+//
+//                                        return true;
+//                                }
+//                                return true;
+//                            }
+//                        });
+//                        donecounter = true;
 
 
 //                        recyclerVie = findViewById(R.id.rv);

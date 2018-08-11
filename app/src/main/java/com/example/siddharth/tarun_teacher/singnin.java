@@ -92,8 +92,7 @@ public class singnin extends AppCompatActivity {
     }
 
     public void opensignup(View view) {
-        setContentView(R.layout.signupform);
-
+       startActivity(new Intent(this,signupform.class));
     }
 
     public void adduser(View view) {
