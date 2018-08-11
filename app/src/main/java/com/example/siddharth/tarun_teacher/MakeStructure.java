@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
          DatabaseReference devinfo=reference.getReference("devinfo");
 
 
+         //todo: comment all devinfo section since it is same for all
          live.child("rank1").setValue("rank1");
          live.child("rank2").setValue("rank2");
          live.child("rank3").setValue("rank3");

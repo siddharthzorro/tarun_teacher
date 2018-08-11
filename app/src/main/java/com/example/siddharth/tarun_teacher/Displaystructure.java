@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Displaystructure {
         String tv_ins_name;
@@ -24,7 +25,15 @@ public class Displaystructure {
         Promotedisplay promotedisplay;
         ArrayList<Notification> notifications;
         ArrayList<Subject> subjectArrayList;
+        Devinnfo devinnfo;
 
+}
+
+ class Devinnfo{
+
+    String message,link;
+    Integer Rateing;
+    ArrayList<String> about_Photo_links,feedback,state,phone;
 }
   class Rank {
       String ins_name;
