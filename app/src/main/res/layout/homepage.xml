@@ -5,12 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sc1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,94 +148,19 @@
             </FrameLayout>
 
         </LinearLayout>
+
     </ScrollView>
-
-<!--
-    <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/sample3"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        >
-        &lt;!&ndash;show on revelal&ndash;&gt;
-        <LinearLayout
-android:id="@+id/llsv_d"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/light_grey"
-            android:orientation="vertical"
-            android:tag="Bottom3">
-
-
-
-        </LinearLayout>
-        &lt;!&ndash;show without reveal&ndash;&gt;
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="-4dp"
-                app:cardCornerRadius="6dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/rankBackground"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="Ranks"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="20dp"
-                    android:text="56"
-                    android:textColor="@color/white" />
-
-            </android.support.v7.widget.CardView>
-
-
-        </RelativeLayout>
-    </com.daimajia.swipe.SwipeLayout>
--->
-
-    <!--
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="45dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/forestgreen"
-
-            android:foregroundGravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/textView11"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
-    -->
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/bottomSheetLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@android:color/holo_orange_light"
         android:padding="@dimen/activity_vertical_margin"
-        app:behavior_peekHeight="100dp"
-        android:layout_marginBottom="50dp"
+        app:behavior_peekHeight="190dp"
+        android:minHeight="50dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
         <TextView
@@ -493,11 +423,13 @@ android:id="@+id/llsv_d"
 
     </RelativeLayout>
 
+    </android.support.design.widget.CoordinatorLayout>
+
     <TextView
         android:layout_gravity="bottom"
         android:id="@+id/textView11"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@color/forestgreen"
         android:gravity="center_vertical"
         android:onClick="openpromote"

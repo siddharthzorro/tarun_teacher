@@ -51,6 +51,8 @@ import org.eazegraph.lib.models.ValueLineSeries;
 import java.net.URL;
 import java.util.Objects;
 
+import me.drakeet.materialdialog.MaterialDialog;
+
 public class MainActivity extends AppCompatActivity {
     LayoutInflater inflater; //recycler view booking
     Integer countOfName = 0;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viepager);
+
         Bundle data=getIntent().getExtras();
 
         String userid=data.getString("userid","user1");
@@ -497,7 +500,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openabout(View view) {
-        startActivity(new Intent(this, about.class));
+
+
+       View view1= LayoutInflater.from(this).inflate(R.layout.about,null,false);
+
+        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
+
+        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+
+       // startActivity(new Intent(this, about.class));
     }
 
     public void opencontactus(View view) {
