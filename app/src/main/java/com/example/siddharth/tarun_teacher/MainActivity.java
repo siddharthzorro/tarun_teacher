@@ -63,13 +63,15 @@ public class MainActivity extends AppCompatActivity {
     Boolean donecounter = false;
     DatabaseReference building;
     DatabaseReference userdata;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference devinfo;
+
 
     // BottomSheetBehavior variable
     private BottomSheetBehavior bottomSheetBehavior;
 
     // TextView variable
     private TextView bottomSheetHeading;
-
 
 
     @Override
@@ -83,25 +85,14 @@ public class MainActivity extends AppCompatActivity {
         final ViewPager viewPager = findViewById(R.id.vp);
 
 
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        devinfo = firebaseDatabase.getReference("devinfo");
         userdata = firebaseDatabase.getReference("users").child(userid);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-//        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bnve);
-//        BottomNavigationMenuView menuView = (BottomNavigationMenuView) bottomNavigationView.getChildAt(0);
-//        for (int i = 0; i < menuView.getChildCount(); i++) {
-//            final View iconView = menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
-//            final ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
-//            final DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-//            layoutParams.height = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
-//            layoutParams.width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 32, displayMetrics);
-//            iconView.setLayoutParams(layoutParams);
-//        }
-
-
-
-        // loadData();
+         loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -524,6 +515,39 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        devinfo.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                d.devinnfo.message = (dataSnapshot.child("about").child("message").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link1").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link2").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link4").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link3").getValue().toString());
+
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state1").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone1").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state2").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone2").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state3").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone3").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state4").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone4").getValue().toString());
+
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link1").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link2").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link3").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link4").getValue().toString());
+
+                d.devinnfo.Rateing = Integer.valueOf(dataSnapshot.child("rateus").child("stars").getValue().toString());
+                d.devinnfo.link = dataSnapshot.child("rateus").child("link").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void expandable(View view) {
@@ -565,7 +589,37 @@ public class MainActivity extends AppCompatActivity {
 
     public void opencontactus(View view) {
         Log.d("in", "opencontactus: in");
-        startActivity(new Intent(MainActivity.this, contactus.class));
+        View view1 = LayoutInflater.from(this).inflate(R.layout.contact1, null, false);
+
+        TextView state1 = view1.findViewById(R.id.state1_contacts);
+        state1.setText(d.devinnfo.state.get(0));
+        TextView state2 = view1.findViewById(R.id.state2_contacts);
+        state2.setText(d.devinnfo.state.get(1));
+        TextView state3 = view1.findViewById(R.id.state3_contacts);
+        state3.setText(d.devinnfo.state.get(2));
+        TextView state4 = view1.findViewById(R.id.state4_contacts);
+        state4.setText(d.devinnfo.state.get(3));
+
+
+        TextView phone1 = view1.findViewById(R.id.phone1_contact);
+        phone1.setText(d.devinnfo.phone.get(0));
+        TextView phone2 = view1.findViewById(R.id.phone2_contact);
+        phone2.setText(d.devinnfo.phone.get(1));
+        TextView phone3 = view1.findViewById(R.id.phone3_contact);
+        phone3.setText(d.devinnfo.phone.get(2));
+        TextView phone4 = view1.findViewById(R.id.phone4_contact);
+        phone4.setText(d.devinnfo.phone.get(3));
+
+        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
+
+        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+        //startActivity(new Intent(MainActivity.this, contactus.class));
         Log.d("in", "opencontactus: out");
     }
 
