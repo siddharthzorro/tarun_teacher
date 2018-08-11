@@ -73,18 +73,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viepager);
 
-        Bundle data=getIntent().getExtras();
+        Bundle data = getIntent().getExtras();
 
-        String userid=data.getString("userid","user1");
+        String userid = data.getString("userid", "user1");
         final ViewPager viewPager = findViewById(R.id.vp);
 
 
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         userdata = firebaseDatabase.getReference("users").child(userid);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-       // loadData();
+        // loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -362,8 +362,6 @@ public class MainActivity extends AppCompatActivity {
         BottomBarItem item2 = new BottomBarItem(R.mipmap.bookingandchat_foreground);
         BottomBarItem item3 = new BottomBarItem(R.mipmap.insight_foreground);
 
-
-
         BottomNavigationBar bottomBar = findViewById(R.id.bottom_bar);
         bottomBar.addTab(item1);
         bottomBar.addTab(item2);
@@ -384,13 +382,11 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(dirtyHack, 100);
 
-
-
-
     }
+
     Displaystructure d;
 
-    void loadData(){
+    void loadData() {
         userdata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -419,26 +415,26 @@ public class MainActivity extends AppCompatActivity {
 
                 d.graphdata.w1 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("mon").getValue().toString());
                 d.graphdata.w2 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("tue").getValue().toString());
-                d.graphdata.w3= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("wed").getValue().toString());
-                d.graphdata.w4= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("thu").getValue().toString());
-                d.graphdata.w5= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("fri").getValue().toString());
-                d.graphdata.w6= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sat").getValue().toString());
-                d.graphdata.w7= Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sun").getValue().toString());
+                d.graphdata.w3 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("wed").getValue().toString());
+                d.graphdata.w4 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("thu").getValue().toString());
+                d.graphdata.w5 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("fri").getValue().toString());
+                d.graphdata.w6 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sat").getValue().toString());
+                d.graphdata.w7 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("interaction").child("sun").getValue().toString());
 
-                d.review1.name=dataSnapshot.child("institute").child("review").child("review1").child("name").getValue().toString();
-                d.review1.comment=dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString();
-                d.review1.subject=dataSnapshot.child("institute").child("review").child("review1").child("subject").getValue().toString();
-                d.review1.ratebar=Integer.valueOf(dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString());
+                d.review1.name = dataSnapshot.child("institute").child("review").child("review1").child("name").getValue().toString();
+                d.review1.comment = dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString();
+                d.review1.subject = dataSnapshot.child("institute").child("review").child("review1").child("subject").getValue().toString();
+                d.review1.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString());
 
-                d.review2.name=dataSnapshot.child("institute").child("review").child("review2").child("name").getValue().toString();
-                d.review2.comment=dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString();
-                d.review2.subject=dataSnapshot.child("institute").child("review").child("review2").child("subject").getValue().toString();
-                d.review2.ratebar=Integer.valueOf(dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString());
+                d.review2.name = dataSnapshot.child("institute").child("review").child("review2").child("name").getValue().toString();
+                d.review2.comment = dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString();
+                d.review2.subject = dataSnapshot.child("institute").child("review").child("review2").child("subject").getValue().toString();
+                d.review2.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString());
 
-                d.building.ins_name=dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
-                d.building.about=dataSnapshot.child("institute").child("building").child("about").getValue().toString();
-                d.building.office_num=dataSnapshot.child("institute").child("building").child("officenumber").getValue().toString();
-              //  d.building.website=dataSnapshot.child("institute").child("building").child("website").getValue().toString();
+                d.building.ins_name = dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
+                d.building.about = dataSnapshot.child("institute").child("building").child("about").getValue().toString();
+                d.building.office_num = dataSnapshot.child("institute").child("building").child("officenumber").getValue().toString();
+                //  d.building.website=dataSnapshot.child("institute").child("building").child("website").getValue().toString();
 
                 //todo add arraylist subjects and class subjects
 
@@ -453,26 +449,59 @@ public class MainActivity extends AppCompatActivity {
 //                d.infofeedback.u4=dataSnapshot.child("devinfo").child("feedback").child("link4").getValue().toString();
 
 //               d.inforateus.u=dataSnapshot.child("devinfo").child("rateus").child("link1").getValue().toString();
-                d.inforateus.num_stars=Integer.valueOf(dataSnapshot.child("devinfo").child("rateus").child("stars").getValue().toString());
+                d.inforateus.num_stars = Integer.valueOf(dataSnapshot.child("devinfo").child("rateus").child("stars").getValue().toString());
 
-                d.infocontact1.location=dataSnapshot.child("devinfo").child("contactus").child("state1").getValue().toString();
-                d.infocontact2.location=dataSnapshot.child("devinfo").child("contactus").child("state2").getValue().toString();
-                d.infocontact3.location=dataSnapshot.child("devinfo").child("contactus").child("state3").getValue().toString();
-                d.infocontact4.location=dataSnapshot.child("devinfo").child("contactus").child("state4").getValue().toString();
-                d.infocontact1.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone1").getValue().toString();
-                d.infocontact2.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone2").getValue().toString();
-                d.infocontact3.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone3").getValue().toString();
-                d.infocontact4.phnum=dataSnapshot.child("devinfo").child("contactus").child("phone4").getValue().toString();
+                d.infocontact1.location = dataSnapshot.child("devinfo").child("contactus").child("state1").getValue().toString();
+                d.infocontact2.location = dataSnapshot.child("devinfo").child("contactus").child("state2").getValue().toString();
+                d.infocontact3.location = dataSnapshot.child("devinfo").child("contactus").child("state3").getValue().toString();
+                d.infocontact4.location = dataSnapshot.child("devinfo").child("contactus").child("state4").getValue().toString();
+                d.infocontact1.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone1").getValue().toString();
+                d.infocontact2.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone2").getValue().toString();
+                d.infocontact3.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone3").getValue().toString();
+                d.infocontact4.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone4").getValue().toString();
 
-                d.promotedisplay.area=dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString();
-                d.promotedisplay.radius=Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString());
-                d.promotedisplay.duration=Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString());
+                d.promotedisplay.area = dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString();
+                d.promotedisplay.radius = Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("radius").getValue().toString());
+                d.promotedisplay.duration = Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("duration").getValue().toString());
 
 //todo postpromotion
 //todo notification
 
 
             }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        userdata.child("institute").child("promote").child("promotepage2").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot postPromotionModel : dataSnapshot.getChildren()) {
+
+                    d.promotedisplay.pstprom.add(new Postpromotion(
+                                    postPromotionModel.child("link").getValue().toString(),
+                                    postPromotionModel.child("description").getValue().toString(),
+                                    postPromotionModel.child("photo").getValue().toString()
+                            )
+                    );
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        userdata.child("institute").child("building").child("subjects").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot subjects : dataSnapshot.getChildren()) {
+                    d.subjectArrayList.add(new Subject(subjects.getKey(), subjects.getValue().toString()));
+                }
+            }
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -502,7 +531,7 @@ public class MainActivity extends AppCompatActivity {
     public void openabout(View view) {
 
 
-       View view1= LayoutInflater.from(this).inflate(R.layout.about,null,false);
+        View view1 = LayoutInflater.from(this).inflate(R.layout.about, null, false);
 
         final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
 
@@ -514,7 +543,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mMaterialDialog.show();
 
-       // startActivity(new Intent(this, about.class));
+        // startActivity(new Intent(this, about.class));
     }
 
     public void opencontactus(View view) {
@@ -531,11 +560,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, rateus.class));
     }
 
-    public void whatdoesoverview(View view){
-        Toast.makeText(this,"shwhsdvwvdvd",Toast.LENGTH_SHORT).show();
+    public void whatdoesoverview(View view) {
+        Toast.makeText(this, "shwhsdvwvdvd", Toast.LENGTH_SHORT).show();
     }
-    public void whatdoesinteraction(View view){
-        Toast.makeText(this,"dshdvgsd dsgsvd",Toast.LENGTH_SHORT).show();
+
+    public void whatdoesinteraction(View view) {
+        Toast.makeText(this, "dshdvgsd dsgsvd", Toast.LENGTH_SHORT).show();
     }
 
     public void clickit(View view) {
@@ -567,29 +597,29 @@ public class MainActivity extends AppCompatActivity {
         EditText et_office_num = findViewById(R.id.building_et_office_num);
         EditText et_website = findViewById(R.id.building_et_website);
 
-        if(checkEdittext(et_institute)&&checkEdittext(et_about)&&checkEdittext(et_teacher1)
-                &&checkEdittext(et_teacher2)&&checkEdittext(et_teacher3)&&checkEdittext(et_address)&&checkEdittext(et_office_num)
-                &&checkEdittext(et_website)&&checkSwitch(sw_grp_tuition,sw_hom_tuition)&&checkSwitch(sw_direct,sw_entr_based))
-        {
-                 building.child("institutename").setValue(et_institute.getText());
+        if (checkEdittext(et_institute) && checkEdittext(et_about) && checkEdittext(et_teacher1)
+                && checkEdittext(et_teacher2) && checkEdittext(et_teacher3) && checkEdittext(et_address) && checkEdittext(et_office_num)
+                && checkEdittext(et_website) && checkSwitch(sw_grp_tuition, sw_hom_tuition) && checkSwitch(sw_direct, sw_entr_based)) {
+            building.child("institutename").setValue(et_institute.getText());
         }
     }
-    boolean checkEdittext(EditText editText){
-        if (editText.getText().toString().isEmpty()){
+
+    boolean checkEdittext(EditText editText) {
+        if (editText.getText().toString().isEmpty()) {
             editText.setError("fill this");
             return false;
-        }
-        else
+        } else
             return true;
     }
-    boolean checkSwitch(Switch switch1,Switch switch2){
-        if(switch1.isChecked()==switch2.isChecked())
-            return  false;
+
+    boolean checkSwitch(Switch switch1, Switch switch2) {
+        if (switch1.isChecked() == switch2.isChecked())
+            return false;
         else return true;
     }
 
     public void openSeeMore(View view) {
-        startActivity(new Intent(this,Reviews_full.class));
+        startActivity(new Intent(this, Reviews_full.class));
     }
 
     class vpAdapte extends FragmentPagerAdapter {

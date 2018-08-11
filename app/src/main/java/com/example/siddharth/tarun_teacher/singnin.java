@@ -62,7 +62,10 @@ public class singnin extends AppCompatActivity {
 
             } else {
 
-                mAuth.signInWithEmailAndPassword(et_username.getText().toString(), et_password.getText().toString())
+                String email=et_username.getText().toString();
+                email = email.replaceAll("[^a-zA-Z0-9]", "");
+
+                mAuth.signInWithEmailAndPassword(email, et_password.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -103,7 +106,11 @@ public class singnin extends AppCompatActivity {
             if (et_pass.getText().toString().isEmpty())
                 et_pass.setError("fill this");
             else {
-                mAuth.createUserWithEmailAndPassword(et_name.getText().toString(), et_pass.getText().toString())
+
+                String email=et_name.getText().toString();
+                email = email.replaceAll("[^a-zA-Z0-9]", "");
+
+                mAuth.createUserWithEmailAndPassword(email, et_pass.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

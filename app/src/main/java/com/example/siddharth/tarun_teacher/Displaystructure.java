@@ -23,6 +23,7 @@ public class Displaystructure {
         Infocontact infocontact1,infocontact2,infocontact3,infocontact4;
         Promotedisplay promotedisplay;
         ArrayList<Notification> notifications;
+        ArrayList<Subject> subjectArrayList;
 
 }
   class Rank {
@@ -48,7 +49,12 @@ public class Displaystructure {
 //  todo attach google maps
   }
   class Subject{
-    String subject,teacher;
+      public Subject(String subject, String teacher) {
+          this.subject = subject;
+          this.teacher = teacher;
+      }
+
+      String subject,teacher;
   }
   class Infoabout{
     URL url1,url2,url3,url4;
@@ -70,7 +76,13 @@ public class Displaystructure {
    ArrayList<Postpromotion> pstprom;
   }
   class Postpromotion{
-   URL link;
+      public Postpromotion(String link, String description, String photolink) {
+          this.link = link;
+          this.description = description;
+          this.photolink = photolink;
+      }
+
+      String link;
    String description,photolink;
   }
   class Notification{

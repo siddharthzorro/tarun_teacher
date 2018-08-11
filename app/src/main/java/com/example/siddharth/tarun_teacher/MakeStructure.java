@@ -57,11 +57,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
          users.child(userid).child("institute").child("building").child("institutename").setValue("FiitJee");
          users.child(userid).child("institute").child("building").child("about").setValue("we are 6s");
-         users.child(userid).child("institute").child("building").child("subject1").setValue("teacher1");
-         users.child(userid).child("institute").child("building").child("subject2").setValue("teacher2");
-         users.child(userid).child("institute").child("building").child("subject3").setValue("teacher3");
-         users.child(userid).child("institute").child("building").child("subject4").setValue("teacher4");
-         users.child(userid).child("institute").child("building").child("subject5").setValue("teacher5");
+         users.child(userid).child("institute").child("building").child("subjects").child("subject1").setValue("teacher1");
+         users.child(userid).child("institute").child("building").child("subjects").child("subject2").setValue("teacher2");
+         users.child(userid).child("institute").child("building").child("subjects").child("subject3").setValue("teacher3");
+         users.child(userid).child("institute").child("building").child("subjects").child("subject4").setValue("teacher4");
+         users.child(userid).child("institute").child("building").child("subjects").child("subject5").setValue("teacher5");
          users.child(userid).child("institute").child("building").child("address").setValue("janakpuri");
          users.child(userid).child("institute").child("building").child("officenumber").setValue("48484885");
          users.child(userid).child("institute").child("building").child("website").setValue("http//..");
