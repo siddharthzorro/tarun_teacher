@@ -23,6 +23,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -439,6 +440,9 @@ public class MainActivity extends AppCompatActivity {
                 d.building.ins_name = dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
                 d.building.about = dataSnapshot.child("institute").child("building").child("about").getValue().toString();
                 d.building.office_num = dataSnapshot.child("institute").child("building").child("officenumber").getValue().toString();
+                d.building.address = dataSnapshot.child("institute").child("building").child("address").getValue().toString();
+                d.building.website = dataSnapshot.child("institute").child("building").child("website").getValue().toString();
+
                 //  d.building.website=dataSnapshot.child("institute").child("building").child("website").getValue().toString();
 
                 //todo add arraylist subjects and class subjects
@@ -620,6 +624,51 @@ public class MainActivity extends AppCompatActivity {
         Log.d("in", "opencontactus: out");
     }
 
+    void loadDataInBuilding(){
+        EditText et_institute = findViewById(R.id.buildind_et_ins_name);
+        et_institute.setText(d.tv_ins_name);
+        EditText et_about = findViewById(R.id.buildind_et_about);
+        et_about.setText(d.building.about);
+        Spinner sp_subject1 = findViewById(R.id.buildind_sp_subject1);
+        //todo : do something with spinner
+        Spinner sp_subject2 = findViewById(R.id.buildind_sp_subject2);
+        Spinner sp_subject3 = findViewById(R.id.buildind_sp_subject3);
+        EditText et_teacher1 = findViewById(R.id.buildind_et_teacher1);
+        et_teacher1.setText(d.building.subjects.get(0).teacher);
+        EditText et_teacher2 = findViewById(R.id.buildind_et_teacher2);
+        et_teacher2.setText(d.building.subjects.get(1).teacher);
+        EditText et_teacher3 = findViewById(R.id.buildind_et_teacher3);
+        et_teacher3.setText(d.building.subjects.get(2).teacher);
+        Switch sw_grp_tuition = findViewById(R.id.building_switch_grp_tuition);
+        Switch sw_hom_tuition = findViewById(R.id.building_switch_hom_tuition);
+        if (d.building.switch1) {
+            sw_grp_tuition.setChecked(true);
+            sw_hom_tuition.setChecked(false);
+        }
+        else {
+            sw_grp_tuition.setChecked(false);
+            sw_hom_tuition.setChecked(true);
+        }
+        Switch sw_entr_based = findViewById(R.id.building_switch_entrance_based);
+        Switch sw_direct = findViewById(R.id.building_switch_direct);
+        if (d.building.switch2) {
+            sw_entr_based.setChecked(true);
+            sw_direct.setChecked(false);
+        }
+        else {
+            sw_entr_based.setChecked(false);
+            sw_direct.setChecked(true);
+        }
+        EditText et_address = findViewById(R.id.building_et_address);
+        et_address.setText(d.building.address);
+        EditText et_office_num = findViewById(R.id.building_et_office_num);
+        et_office_num.setText(d.building.office_num);
+        EditText et_website = findViewById(R.id.building_et_website);
+        et_website.setText(d.building.website);
+    }
+    void loadDataInGraphs(){
+        
+    }
     public void openfeedback(View view) {
         startActivity(new Intent(this, feedback.class));
     }
