@@ -51,8 +51,7 @@ public class Displaystructure {
 
   }
   class Building{
-    String ins_name,about,office_num;
-    URL website;
+    String ins_name,about,office_num,address,website;
     ArrayList<Subject> subjects;
     Boolean switch1,switch2;
 //  todo attach google maps
