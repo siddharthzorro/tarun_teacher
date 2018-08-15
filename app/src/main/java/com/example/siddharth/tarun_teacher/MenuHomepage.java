@@ -1,8 +1,16 @@
 package com.example.siddharth.tarun_teacher;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+
+//import com.example.siddharth.tarun_teacher.MainActivity.*;
+import me.drakeet.materialdialog.MaterialDialog;
 
 public class MenuHomepage extends AppCompatActivity{
     @Override
@@ -19,4 +27,7 @@ public class MenuHomepage extends AppCompatActivity{
              break;
          }
     }
+
+
+
 }

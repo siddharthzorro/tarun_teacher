@@ -605,59 +605,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, promote.class));
     }
 
-    public void openabout(View view) {
-
-
-        View view1 = LayoutInflater.from(this).inflate(R.layout.about, null, false);
-
-        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
-
-        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mMaterialDialog.dismiss();
-            }
-        });
-        mMaterialDialog.show();
-
-        // startActivity(new Intent(this, about.class));
-    }
-
-    public void opencontactus(View view) {
-        Log.d("in", "opencontactus: in");
-        View view1 = LayoutInflater.from(this).inflate(R.layout.contact1, null, false);
-
-        TextView state1 = view1.findViewById(R.id.state1_contacts);
-        state1.setText(d.devinnfo.state.get(0));
-        TextView state2 = view1.findViewById(R.id.state2_contacts);
-        state2.setText(d.devinnfo.state.get(1));
-        TextView state3 = view1.findViewById(R.id.state3_contacts);
-        state3.setText(d.devinnfo.state.get(2));
-        TextView state4 = view1.findViewById(R.id.state4_contacts);
-        state4.setText(d.devinnfo.state.get(3));
-
-
-        TextView phone1 = view1.findViewById(R.id.phone1_contact);
-        phone1.setText(d.devinnfo.phone.get(0));
-        TextView phone2 = view1.findViewById(R.id.phone2_contact);
-        phone2.setText(d.devinnfo.phone.get(1));
-        TextView phone3 = view1.findViewById(R.id.phone3_contact);
-        phone3.setText(d.devinnfo.phone.get(2));
-        TextView phone4 = view1.findViewById(R.id.phone4_contact);
-        phone4.setText(d.devinnfo.phone.get(3));
-
-        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
-
-        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mMaterialDialog.dismiss();
-            }
-        });
-        mMaterialDialog.show();
-        //startActivity(new Intent(MainActivity.this, contactus.class));
-        Log.d("in", "opencontactus: out");
-    }
 
     void loadDataInBuilding(){
         EditText et_institute = findViewById(R.id.buildind_et_ins_name);
@@ -704,13 +651,7 @@ public class MainActivity extends AppCompatActivity {
     void loadDataInGraphs(){
         
     }
-    public void openfeedback(View view) {
-        startActivity(new Intent(this, feedback.class));
-    }
 
-    public void openrateus(View view) {
-        startActivity(new Intent(this, rateus.class));
-    }
 
     public void whatdoesoverview(View view) {
         Toast.makeText(this, "shwhsdvwvdvd", Toast.LENGTH_SHORT).show();
@@ -771,17 +712,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void open_layout(View view){
-        Intent intent=new Intent(this, MenuHomepage.class);
+//        Intent intent=new Intent(this, MenuHomepage.class);
           switch (view.getId())
         {
-            case R.id.homepage_profile: intent.putExtra("key",0);
+            case R.id.homepage_profile: setContentView(R.layout.layout);
             break;
-            case R.id.homepage_building: intent.putExtra("key",1);
+            case R.id.homepage_building: setContentView(R.layout.tab2);
             break;
-            case R.id.homepage_info:intent.putExtra("key",2);
+            case R.id.homepage_info:setContentView(R.layout.tab3);
             break;
         }
-        startActivity(intent);
+//        startActivity(intent);
 
     }
     public void openSeeMore(View view) {
@@ -853,5 +794,69 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public Displaystructure getd(){
+        return  d;
+    }
+    public void openabout(View view) {
+
+
+        View view1 = LayoutInflater.from(this).inflate(R.layout.about, null, false);
+
+        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
+
+        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+
+        // startActivity(new Intent(this, about.class));
+    }
+
+    public void opencontactus(View view) {
+        Log.d("in", "opencontactus: in");
+        View view1 = LayoutInflater.from(this).inflate(R.layout.contact1, null, false);
+
+        TextView state1 = view1.findViewById(R.id.state1_contacts);
+        state1.setText(d.devinnfo.state.get(0));
+        TextView state2 = view1.findViewById(R.id.state2_contacts);
+        state2.setText(d.devinnfo.state.get(1));
+        TextView state3 = view1.findViewById(R.id.state3_contacts);
+        state3.setText(d.devinnfo.state.get(2));
+        TextView state4 = view1.findViewById(R.id.state4_contacts);
+        state4.setText(d.devinnfo.state.get(3));
+
+
+        TextView phone1 = view1.findViewById(R.id.phone1_contact);
+        phone1.setText(d.devinnfo.phone.get(0));
+        TextView phone2 = view1.findViewById(R.id.phone2_contact);
+        phone2.setText(d.devinnfo.phone.get(1));
+        TextView phone3 = view1.findViewById(R.id.phone3_contact);
+        phone3.setText(d.devinnfo.phone.get(2));
+        TextView phone4 = view1.findViewById(R.id.phone4_contact);
+        phone4.setText(d.devinnfo.phone.get(3));
+
+        final MaterialDialog mMaterialDialog = new MaterialDialog(this).setView(view1);
+
+        mMaterialDialog.setNegativeButton("cancel", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+        //startActivity(new Intent(MainActivity.this, contactus.class));
+        Log.d("in", "opencontactus: out");
+    }
+    public void openfeedback(View view) {
+        startActivity(new Intent(this, feedback.class));
+    }
+
+    public void openrateus(View view) {
+        startActivity(new Intent(this, rateus.class));
     }
 }

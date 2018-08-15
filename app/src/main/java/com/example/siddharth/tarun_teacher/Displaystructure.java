@@ -1,6 +1,7 @@
 package com.example.siddharth.tarun_teacher;
 
 import android.os.Bundle;
+import android.service.notification.NotificationListenerService;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -26,7 +27,8 @@ public class Displaystructure {
         ArrayList<Notification> notifications;
         ArrayList<Subject> subjectArrayList;
         Devinnfo devinnfo;
-
+        Ranking ranking;
+        Imageins pic;
 }
 
  class Devinnfo{
@@ -34,6 +36,12 @@ public class Displaystructure {
     String message,link;
     Integer Rateing;
     ArrayList<String> about_Photo_links,feedback,state,phone;
+}
+class Imageins {
+    String ins_image;
+}
+class Ranking{
+    Integer ins_rank;
 }
   class Rank {
       String ins_name;
