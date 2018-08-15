@@ -14,9 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,8 +25,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
-import github.chenupt.springindicator.SpringIndicator;
-
 public class signupform extends AppCompatActivity {
     ViewPager x;
     private FirebaseAuth mAuth;
@@ -38,7 +34,7 @@ public class signupform extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup_holder);
+        setContentView(R.layout.signup_starting);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
