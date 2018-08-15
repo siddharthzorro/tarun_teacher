@@ -271,6 +271,9 @@ public class MainActivity extends AppCompatActivity {
                         inflater = LayoutInflater.from(MainActivity.this);
 
                         final Integer notificationCount=0;
+                        if(notificationCount==0){
+
+                        }
                         RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
                             @NonNull
                             @Override

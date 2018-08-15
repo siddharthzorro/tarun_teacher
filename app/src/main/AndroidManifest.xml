@@ -25,6 +25,8 @@
             android:name=".promote"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".contactus" />
+        <activity android:name=".MenuHomepage" />
+
         <activity android:name=".feedback" />
         <activity
             android:name=".rateus"
