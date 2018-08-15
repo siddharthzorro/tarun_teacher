@@ -115,26 +115,6 @@ public class MainActivity extends AppCompatActivity {
 
                         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                         setSupportActionBar(toolbar);
-//                        final ConstraintLayout layout = findViewById(R.id.cl);
-//                        layout.bringChildToFront(findViewById(R.id.sc1));
-//                        SwipeLayout sample3 = (SwipeLayout) findViewById(R.id.sample3);
-//                        //given id here in second parameter is id of view you want to show when reveling not by default
-//                        //everything else is visible by itself
-//                        sample3.addDrag(SwipeLayout.DragEdge.Right, sample3.findViewWithTag("Bottom2"));
-//
-//                        sample3.addDrag(SwipeLayout.DragEdge.Bottom, sample3.findViewWithTag("Bottom3"));
-//                        sample3.addRevealListener(R.id.llsv_d, new SwipeLayout.OnRevealListener() {
-//                            @Override
-//                            public void onReveal(View child, SwipeLayout.DragEdge edge, float fraction, int distance) {
-//                                layout.bringChildToFront(findViewById(R.id.sample3));
-//
-//                                if (fraction == 1)
-//                                    layout.bringChildToFront(findViewById(R.id.sample3));
-//                                else
-//                                    layout.bringChildToFront(findViewById(R.id.sc1));
-//
-//                            }
-//                        });
 
                         bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayout));
                         bottomSheetHeading = (TextView) findViewById(R.id.bottomSheetHeading);
@@ -147,118 +127,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                         rate_bar.setRating(rating);
-//                        final BottomNavigationView navigationView = findViewById(R.id.bnve);
-//
-//                        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//                            @Override
-//                            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//                                View layout1 = findViewById(R.id.tab1);
-//                                View layout2 = findViewById(R.id.tab2);
-//                                View layout3 = findViewById(R.id.tab3);
-//                                Menu menu2 = navigationView.getMenu();
-//                                MenuItem item11 = menu2.getItem(0);
-//                                MenuItem item12 = menu2.getItem(1);
-//                                MenuItem item13 = menu2.getItem(2);
-//
-//                                switch (menuItem.getItemId()) {
-//                                    case R.id.menuprofile:
-//
-//                                        layout1.setVisibility(View.VISIBLE);
-//                                        layout2.setVisibility(View.GONE);
-//                                        layout3.setVisibility(View.GONE);
-//                                        item11.setIcon(R.drawable.profileownerfilled);
-//                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
-//                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
-//                                        return true;
-//                                    case R.id.menubuild:
-//                                        Log.d("mn", "onNavigationItemSelected: 2");
-//                                        layout1.setVisibility(View.GONE);
-//                                        layout2.setVisibility(View.VISIBLE);
-//                                        layout3.setVisibility(View.GONE);
-//                                        item12.setIcon(R.drawable.institutefilled);
-//                                        item11.setIcon(R.drawable.icon_selector_home1);
-//                                        item13.setIcon(R.mipmap.ic_launcher_foreground_info_newz);
-//
-//                                        final Switch myswitch2 = findViewById(R.id.building_switch_direct);
-//
-//                                        final Switch myswitch1 = findViewById(R.id.building_switch_entrance_based);
-//                                        myswitch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                                                if (isChecked) {
-//                                                    myswitch2.setChecked(false);
-//                                                }
-//                                                // true if the switch is in the On position
-//                                            }
-//                                        });
-//                                        myswitch2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                                                if (isChecked) {
-//                                                    myswitch1.setChecked(false);
-//                                                }
-//                                                // true if the switch is in the On position
-//                                            }
-//                                        });
-//                                        final Switch myswitch4 = findViewById(R.id.building_switch_hom_tuition);
-//
-//                                        final Switch myswitch3 = findViewById(R.id.building_switch_grp_tuition);
-//                                        myswitch3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                                                if (isChecked) {
-//                                                    myswitch4.setChecked(false);
-//                                                }
-//                                                // true if the switch is in the On position
-//                                            }
-//                                        });
-//                                        myswitch4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                                            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                                                if (isChecked) {
-//                                                    myswitch3.setChecked(false);
-//                                                }
-//                                                // true if the switch is in the On position
-//                                            }
-//                                        });
-//                                        return true;
-//                                    case R.id.menuinfo:
-//
-//                                        layout1.setVisibility(View.GONE);
-//                                        layout2.setVisibility(View.GONE);
-//                                        layout3.setVisibility(View.VISIBLE);
-//                                        item13.setIcon(R.drawable.infofilled);
-//                                        item11.setIcon(R.drawable.icon_selector_home1);
-//                                        item12.setIcon(R.mipmap.ic_launcher_foreground_institute_new);
-//
-//                                        return true;
-//                                }
-//                                return true;
-//                            }
-//                        });
-//                        donecounter = true;
-
-
-//                        recyclerVie = findViewById(R.id.rv);
-//                        recyclerVie.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-//                        recyclerVie.setAdapter(new RecyclerView.Adapter() {
-//                            @NonNull
-//                            @Override
-//                            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//                                return new RecyclerView.ViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.homepage_holder, parent, false)) {
-//                                    @Override
-//                                    public String toString() {
-//                                        return super.toString();
-//                                    }
-//                                };
-//                            }
-//
-//                            @Override
-//                            public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//
-//                            }
-//
-//                            @Override
-//                            public int getItemCount() {
-//                                return countOfName;
-//                            }
-//                        });
 
                         break;
                     case 1:
@@ -272,24 +140,17 @@ public class MainActivity extends AppCompatActivity {
 
                         final Integer notificationCount=0;
                         if(notificationCount==0){
-
+                            findViewById(R.id.tv_norevies).setVisibility(View.VISIBLE);
                         }
+                        else
+                            findViewById(R.id.tv_norevies).setVisibility(View.INVISIBLE);
+
                         RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
                             @NonNull
                             @Override
                             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                                 View view;
                                 view = inflater.inflate(R.layout.booking_holder, viewGroup, false);
-//                                RippleView rippleView;
-//                                rippleView = findViewById(R.id.rplview);
-//                                rippleView.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
-//
-//                                    @Override
-//                                    public void onComplete(RippleView rippleView) {
-//                                        Log.d("Sample", "Ripple completed");
-//                                    }
-//
-//                                });
                                 final RecyclerView.ViewHolder viewHolder = new RecyclerView.ViewHolder(view) {
                                     @Override
                                     public String toString() {
@@ -427,6 +288,9 @@ public class MainActivity extends AppCompatActivity {
 
     Displaystructure d;
 
+    void changeWallpaper(){
+
+    }
     void loadData() {
         userdata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
