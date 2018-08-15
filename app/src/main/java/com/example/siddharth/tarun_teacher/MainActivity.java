@@ -340,8 +340,8 @@ public class MainActivity extends AppCompatActivity {
                         monthGraph.put("Oct",0.0f);
                         monthGraph.put("Nov",0.0f);
                         monthGraph.put("Dec",0.0f);
-                                                
-                        
+
+
                         series.addPoint(new ValueLinePoint("Jan", monthGraph.get("Jan")));
                         series.addPoint(new ValueLinePoint("Feb", monthGraph.get("Feb")));
                         series.addPoint(new ValueLinePoint("Mar", monthGraph.get("Mar")));
@@ -362,6 +362,7 @@ public class MainActivity extends AppCompatActivity {
                         ValueLineChart mCubicValueLineChart2 = (ValueLineChart) findViewById(R.id.cubiclinechart2);
                         ValueLineSeries series2 = new ValueLineSeries();
                         series2.setColor(0xFF008080);
+                        series2.setColor(0xFF56B7F1);
                         HashMap<String,Float> weekdayGraph =new HashMap<>();
 
                         weekdayGraph.put("M",0.0f);
@@ -371,7 +372,7 @@ public class MainActivity extends AppCompatActivity {
                         weekdayGraph.put("F",0.0f);
                         weekdayGraph.put("S",0.0f);
                         weekdayGraph.put("Su",0.0f);
-                        
+
                         series2.addPoint(new ValueLinePoint("d", weekdayGraph.get("M")));
                         series2.addPoint(new ValueLinePoint("M", weekdayGraph.get("M")));
                         series2.addPoint(new ValueLinePoint("T", weekdayGraph.get("T")));
@@ -766,6 +767,20 @@ public class MainActivity extends AppCompatActivity {
         else return true;
     }
 
+    public void open_layout(View view){
+        Intent intent=new Intent(this, MenuHomepage.class);
+          switch (view.getId())
+        {
+            case R.id.homepage_profile: intent.putExtra("key",0);
+            break;
+            case R.id.homepage_building: intent.putExtra("key",1);
+            break;
+            case R.id.homepage_info:intent.putExtra("key",2);
+            break;
+        }
+        startActivity(intent);
+
+    }
     public void openSeeMore(View view) {
         startActivity(new Intent(this, Reviews_full.class));
     }
