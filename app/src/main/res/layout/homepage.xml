@@ -220,8 +220,8 @@
                     android:visibility="visible" />
 
                 <include
-                    android:id="@+id/tab2"
-                    layout="@layout/tab2"
+                    android:id="@+id/building1"
+                    layout="@layout/building1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="gone" />

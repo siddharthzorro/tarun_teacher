@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.internal.BottomNavigationMenuView;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,17 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
@@ -36,8 +29,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.andexert.library.RippleView;
-import com.daimajia.swipe.SwipeLayout;
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
 import com.eightbitlab.bottomnavigationbar.BottomNavigationBar;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
@@ -52,8 +43,6 @@ import org.eazegraph.lib.charts.ValueLineChart;
 import org.eazegraph.lib.models.ValueLinePoint;
 import org.eazegraph.lib.models.ValueLineSeries;
 
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -153,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 //                            @Override
 //                            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 //                                View layout1 = findViewById(R.id.tab1);
-//                                View layout2 = findViewById(R.id.tab2);
+//                                View layout2 = findViewById(R.id.building1);
 //                                View layout3 = findViewById(R.id.tab3);
 //                                Menu menu2 = navigationView.getMenu();
 //                                MenuItem item11 = menu2.getItem(0);
@@ -717,7 +706,7 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.homepage_profile: setContentView(R.layout.layout);
             break;
-            case R.id.homepage_building: setContentView(R.layout.tab2);
+            case R.id.homepage_building: setContentView(R.layout.building1);
             break;
             case R.id.homepage_info:setContentView(R.layout.tab3);
             break;
