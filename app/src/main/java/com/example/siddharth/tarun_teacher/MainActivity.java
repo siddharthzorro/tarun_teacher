@@ -53,6 +53,8 @@ import org.eazegraph.lib.models.ValueLinePoint;
 import org.eazegraph.lib.models.ValueLineSeries;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 import me.drakeet.materialdialog.MaterialDialog;
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-         loadData();
+        // loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -268,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
                         LinearLayoutManager manager = new LinearLayoutManager(MainActivity.this);
                         inflater = LayoutInflater.from(MainActivity.this);
 
+                        final Integer notificationCount=0;
                         RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
                             @NonNull
                             @Override
@@ -309,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public int getItemCount() {
-                                return 5;
+                                return notificationCount;
                             }
                         };
                         recyclerView.setLayoutManager(manager);
@@ -324,18 +327,33 @@ public class MainActivity extends AppCompatActivity {
                         ValueLineSeries series = new ValueLineSeries();
                         series.setColor(0xFF54876c);
 
-                        series.addPoint(new ValueLinePoint("Jan", 2.4f));
-                        series.addPoint(new ValueLinePoint("Feb", 3.4f));
-                        series.addPoint(new ValueLinePoint("Mar", .4f));
-                        series.addPoint(new ValueLinePoint("Apr", 1.2f));
-                        series.addPoint(new ValueLinePoint("May", 2.6f));
-                        series.addPoint(new ValueLinePoint("Jun", 1.0f));
-                        series.addPoint(new ValueLinePoint("Jul", 3.5f));
-                        series.addPoint(new ValueLinePoint("Aug", 2.4f));
-                        series.addPoint(new ValueLinePoint("Sep", 2.4f));
-                        series.addPoint(new ValueLinePoint("Oct", 3.4f));
-                        series.addPoint(new ValueLinePoint("Nov", .4f));
-                        series.addPoint(new ValueLinePoint("Dec", 1.3f));
+                        HashMap<String,Float> monthGraph =new HashMap<>();
+                        monthGraph.put("Jan",0.0f);
+                        monthGraph.put("Feb",0.0f);
+                        monthGraph.put("Mar",0.0f);
+                        monthGraph.put("Apr",0.0f);
+                        monthGraph.put("May",0.0f);
+                        monthGraph.put("Jun",0.0f);
+                        monthGraph.put("Jul",0.0f);
+                        monthGraph.put("Aug",0.0f);
+                        monthGraph.put("Sep",0.0f);
+                        monthGraph.put("Oct",0.0f);
+                        monthGraph.put("Nov",0.0f);
+                        monthGraph.put("Dec",0.0f);
+                                                
+                        
+                        series.addPoint(new ValueLinePoint("Jan", monthGraph.get("Jan")));
+                        series.addPoint(new ValueLinePoint("Feb", monthGraph.get("Feb")));
+                        series.addPoint(new ValueLinePoint("Mar", monthGraph.get("Mar")));
+                        series.addPoint(new ValueLinePoint("Apr", monthGraph.get("Apr")));
+                        series.addPoint(new ValueLinePoint("May", monthGraph.get("May")));
+                        series.addPoint(new ValueLinePoint("Jun", monthGraph.get("Jun")));
+                        series.addPoint(new ValueLinePoint("Jul", monthGraph.get("Jul")));
+                        series.addPoint(new ValueLinePoint("Aug", monthGraph.get("Aug")));
+                        series.addPoint(new ValueLinePoint("Sep", monthGraph.get("Sep")));
+                        series.addPoint(new ValueLinePoint("Oct", monthGraph.get("Oct")));
+                        series.addPoint(new ValueLinePoint("Nov", monthGraph.get("Nov")));
+                        series.addPoint(new ValueLinePoint("Dec", monthGraph.get("Dec")));
 
 
                         mCubicValueLineChart.addSeries(series);
@@ -344,16 +362,25 @@ public class MainActivity extends AppCompatActivity {
                         ValueLineChart mCubicValueLineChart2 = (ValueLineChart) findViewById(R.id.cubiclinechart2);
                         ValueLineSeries series2 = new ValueLineSeries();
                         series2.setColor(0xFF56B7F1);
+                        HashMap<String,Float> weekdayGraph =new HashMap<>();
 
-                        series2.addPoint(new ValueLinePoint("d", 2.4f));
-                        series2.addPoint(new ValueLinePoint("M", 3.4f));
-                        series2.addPoint(new ValueLinePoint("T", .4f));
-                        series2.addPoint(new ValueLinePoint("W", 1.2f));
-                        series2.addPoint(new ValueLinePoint("T", 2.6f));
-                        series2.addPoint(new ValueLinePoint("F", 1.0f));
-                        series2.addPoint(new ValueLinePoint("S", 3.5f));
-                        series2.addPoint(new ValueLinePoint("S", .4f));
-                        series2.addPoint(new ValueLinePoint("Dec", 1.3f));
+                        weekdayGraph.put("M",0.0f);
+                        weekdayGraph.put("T",0.0f);
+                        weekdayGraph.put("W",0.0f);
+                        weekdayGraph.put("Th",0.0f);
+                        weekdayGraph.put("F",0.0f);
+                        weekdayGraph.put("S",0.0f);
+                        weekdayGraph.put("Su",0.0f);
+                        
+                        series2.addPoint(new ValueLinePoint("d", weekdayGraph.get("M")));
+                        series2.addPoint(new ValueLinePoint("M", weekdayGraph.get("M")));
+                        series2.addPoint(new ValueLinePoint("T", weekdayGraph.get("T")));
+                        series2.addPoint(new ValueLinePoint("W", weekdayGraph.get("W")));
+                        series2.addPoint(new ValueLinePoint("T", weekdayGraph.get("Th")));
+                        series2.addPoint(new ValueLinePoint("F", weekdayGraph.get("F")));
+                        series2.addPoint(new ValueLinePoint("S", weekdayGraph.get("S")));
+                        series2.addPoint(new ValueLinePoint("S", weekdayGraph.get("Su")));
+                        series2.addPoint(new ValueLinePoint("Dec", weekdayGraph.get("M")));
 
                         mCubicValueLineChart2.addSeries(series2);
                         mCubicValueLineChart2.startAnimation();
