@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
                         ValueLineChart mCubicValueLineChart = (ValueLineChart) findViewById(R.id.cubiclinechart);
 
                         ValueLineSeries series = new ValueLineSeries();
-                        series.setColor(0xFF54876c);
+                        series.setColor(0xFF008080);
 
                         HashMap<String,Float> monthGraph =new HashMap<>();
                         monthGraph.put("Jan",0.0f);
@@ -361,7 +361,7 @@ public class MainActivity extends AppCompatActivity {
 
                         ValueLineChart mCubicValueLineChart2 = (ValueLineChart) findViewById(R.id.cubiclinechart2);
                         ValueLineSeries series2 = new ValueLineSeries();
-                        series2.setColor(0xFF56B7F1);
+                        series2.setColor(0xFF008080);
                         HashMap<String,Float> weekdayGraph =new HashMap<>();
 
                         weekdayGraph.put("M",0.0f);
