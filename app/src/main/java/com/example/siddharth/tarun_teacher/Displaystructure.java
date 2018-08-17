@@ -59,7 +59,7 @@ class Ranking{
 
   }
   class Building{
-    String ins_name,about,office_num,address,website;
+    String ins_name,about,office_num,address,website,ceo;
     ArrayList<Subject> subjects;
     Boolean switch1,switch2;
 //  todo attach google maps
