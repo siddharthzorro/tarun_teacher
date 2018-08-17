@@ -56,6 +56,10 @@ import com.google.firebase.database.FirebaseDatabase;
          devinfo.child("rateus").child("stars").setValue("3");
          devinfo.child("rateus").child("link").setValue("https//efhdf");
 
+         users.child(userid).child("institute").child("building").child("ranking").setValue("1");
+
+         users.child(userid).child("institute").child("building").child("photo").setValue("https//vrtr");
+
          users.child(userid).child("institute").child("building").child("institutename").setValue("FiitJee");
          users.child(userid).child("institute").child("building").child("about").setValue("we are 6s");
          users.child(userid).child("institute").child("building").child("subjects").child("subject1").setValue("teacher1");

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <LinearLayout android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    >
 
     <TextView
         android:layout_marginTop="20dp"
@@ -264,7 +264,180 @@
 
     </LinearLayout>
 
-    <include layout="@layout/building2"/>
+    <LinearLayout android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Admission Type"
+
+            android:layout_marginTop="13dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <Switch
+                android:background="@color/krilin"
+                android:id="@+id/building_switch_entrance_based"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Entrance Based"
+                android:paddingLeft="5dp"/>
+
+            <Switch
+                android:background="@color/krilin"
+                android:id="@+id/building_switch_direct"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:text="Direct"
+                android:paddingLeft="5dp"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:gravity="center_vertical"/>
+
+        <EditText
+            android:id="@+id/building_et_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/krilin"
+            />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:src="@drawable/google_maps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="@color/goku"
+                >
+                <TextView
+                    android:text="Current Location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    />
+                <!--todo: add funtonaslighd asdgefge - -->
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/goku"
+                >
+                <TextView
+                    android:text="Point Location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    />
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <View
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Office Number"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/building_et_office_num"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/krilin"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_website"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Website"
+            android:gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/building_et_website"
+            android:labelFor="@+id/tv_website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/krilin"
+            />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="6dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            >
+
+            <Button
+                android:onClick="buildingSave"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:text="SAVE"
+                android:gravity="center"
+                android:textSize="26dp"
+                android:background="@color/vegeta"
+
+                />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
 
 </LinearLayout>
 </ScrollView>

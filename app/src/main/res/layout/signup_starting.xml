@@ -34,16 +34,15 @@
     </android.support.design.widget.AppBarLayout>
 
 
-
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_prmt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"
         app:layout_constraintStart_toStartOf="parent"
-      >
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
 
     </android.support.v4.view.ViewPager>
 
@@ -62,6 +61,7 @@
         app:siTextColor="@color/colorPrimaryDark"
         app:siTextSize="18sp" />-->
 
+<!--
     <android.support.design.widget.CoordinatorLayout
 
         android:background="@color/caribbeandark"
@@ -122,5 +122,6 @@
             android:layout_height="match_parent" />
 
     </android.support.design.widget.CoordinatorLayout>
+-->
 
 </android.support.constraint.ConstraintLayout>
