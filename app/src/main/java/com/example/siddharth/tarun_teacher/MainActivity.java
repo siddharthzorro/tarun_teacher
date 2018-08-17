@@ -77,18 +77,22 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle data = getIntent().getExtras();
 
+        d = new Displaystructure();
+
         String userid = data.getString("userid", "user1");
-//          String userid="user1";
+        userid = userid.replaceAll("[^a-zA-Z0-9]", "");
+
+        //          String userid="user1";
           final ViewPager viewPager = findViewById(R.id.vp);
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         devinfo = firebaseDatabase.getReference("devinfo");
         userdata = firebaseDatabase.getReference("users").child(userid);
+        System.out.println(userdata);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-         loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -109,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                         setSupportActionBar(toolbar);
 
                         bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayout));
-                        bottomSheetHeading = (TextView) findViewById(R.id.bottomSheetHeading);
+                        bottomSheetHeading =  findViewById(R.id.bottomSheetHeading);
                         final Float rating = 2.5f;
                         final RatingBar rate_bar = findViewById(R.id.rating_homepage);
                         rate_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -121,10 +125,8 @@ public class MainActivity extends AppCompatActivity {
                         rate_bar.setRating(rating);
 
                         break;
-                    case 1:
-
-                        MaterialSearchBar materialSearchBar = findViewById(R.id.searchBar);
-                        materialSearchBar.inflateMenu(R.menu.bottombar_menu_4items);
+                    case 1: MaterialSearchBar materialSearchBar = findViewById(R.id.searchBar);
+                       materialSearchBar.inflateMenu(R.menu.bottombar_menu_4items);
 
                         RecyclerView recyclerView = findViewById(R.id.linearLayout);
                         LinearLayoutManager manager = new LinearLayoutManager(MainActivity.this);
@@ -271,29 +273,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 viewPager.setCurrentItem(1);
+                loadData();
+
             }
         };
         Handler handler = new Handler();
         handler.postDelayed(dirtyHack, 100);
 
+
+
     }
 
-    Displaystructure d= new Displaystructure();
+    Displaystructure d;
+
+
 
     void loadData() {
-        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                d.tv_ins_name = dataSnapshot.child("building").child("institutename").getValue() .toString();
-                d.tv_owner_1 = dataSnapshot.child("building").child("ownername").getValue().toString();
-                d.tv_owner_2 = dataSnapshot.child("building").child("ownername").getValue().toString();
-                d.ratingbar_homepage = Integer.valueOf(dataSnapshot.child("building").child("rating").getValue().toString());
-                d.r1.ins_name = dataSnapshot.child("liveranks").child("rank1").getValue().toString();
-                d.r2.ins_name = dataSnapshot.child("liveranks").child("rank2").getValue().toString();
-                d.r1.rating = Integer.valueOf(dataSnapshot.child("liveranks").child("rank1").getValue().toString());
-                d.r2.rating = Integer.valueOf(dataSnapshot.child("liveranks").child("rank2").getValue().toString());
-                d.r1.position = Integer.valueOf(dataSnapshot.child("liveranks").child("rank1").getValue().toString());
-                d.r2.position = Integer.valueOf(dataSnapshot.child("liveranks").child("rank2").getValue().toString());
+               userdata.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                       System.out.println(dataSnapshot);
+
+                d.tv_ins_name = dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
+                d.ratingbar_homepage = Integer.valueOf(dataSnapshot.child("institute").child("building").child("rating").getValue().toString());
                 d.graphdata.v1 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("jan").getValue().toString());
                 d.graphdata.v2 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("feb").getValue().toString());
                 d.graphdata.v3 = Integer.valueOf(dataSnapshot.child("institute").child("graph").child("monthlyoverview").child("mar").getValue().toString());
@@ -318,12 +320,12 @@ public class MainActivity extends AppCompatActivity {
                 d.review1.name = dataSnapshot.child("institute").child("review").child("review1").child("name").getValue().toString();
                 d.review1.comment = dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString();
                 d.review1.subject = dataSnapshot.child("institute").child("review").child("review1").child("subject").getValue().toString();
-                d.review1.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review1").child("comment").getValue().toString());
+               // d.review1.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review1").child("rating").getValue().toString());
 
                 d.review2.name = dataSnapshot.child("institute").child("review").child("review2").child("name").getValue().toString();
                 d.review2.comment = dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString();
                 d.review2.subject = dataSnapshot.child("institute").child("review").child("review2").child("subject").getValue().toString();
-                d.review2.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review2").child("comment").getValue().toString());
+               // d.review2.ratebar = Integer.valueOf(dataSnapshot.child("institute").child("review").child("review2").child("rating").getValue().toString());
 
                 d.building.ins_name = dataSnapshot.child("institute").child("building").child("institutename").getValue().toString();
                 d.building.about = dataSnapshot.child("institute").child("building").child("about").getValue().toString();
@@ -346,16 +348,16 @@ public class MainActivity extends AppCompatActivity {
 //                d.infofeedback.u4=dataSnapshot.child("devinfo").child("feedback").child("link4").getValue().toString();
 
 //               d.inforateus.u=dataSnapshot.child("devinfo").child("rateus").child("link1").getValue().toString();
-                d.inforateus.num_stars = Integer.valueOf(dataSnapshot.child("devinfo").child("rateus").child("stars").getValue().toString());
+//                d.inforateus.num_stars = Integer.valueOf(dataSnapshot.child("devinfo").child("rateus").child("stars").getValue().toString());
 
-                d.infocontact1.location = dataSnapshot.child("devinfo").child("contactus").child("state1").getValue().toString();
-                d.infocontact2.location = dataSnapshot.child("devinfo").child("contactus").child("state2").getValue().toString();
-                d.infocontact3.location = dataSnapshot.child("devinfo").child("contactus").child("state3").getValue().toString();
-                d.infocontact4.location = dataSnapshot.child("devinfo").child("contactus").child("state4").getValue().toString();
-                d.infocontact1.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone1").getValue().toString();
-                d.infocontact2.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone2").getValue().toString();
-                d.infocontact3.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone3").getValue().toString();
-                d.infocontact4.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone4").getValue().toString();
+//                d.infocontact1.location = dataSnapshot.child("devinfo").child("contactus").child("state1").getValue().toString();
+//                d.infocontact2.location = dataSnapshot.child("devinfo").child("contactus").child("state2").getValue().toString();
+//                d.infocontact3.location = dataSnapshot.child("devinfo").child("contactus").child("state3").getValue().toString();
+//                d.infocontact4.location = dataSnapshot.child("devinfo").child("contactus").child("state4").getValue().toString();
+//                d.infocontact1.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone1").getValue().toString();
+//                d.infocontact2.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone2").getValue().toString();
+//                d.infocontact3.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone3").getValue().toString();
+//                d.infocontact4.phnum = dataSnapshot.child("devinfo").child("contactus").child("phone4").getValue().toString();
 
                 d.promotedisplay.area = dataSnapshot.child("institute").child("promote").child("promotepage1").child("area").getValue().toString();
                 d.promotedisplay.radius = Integer.valueOf(dataSnapshot.child("institute").child("promote").child("promotepage1").child("radius").getValue().toString());
@@ -391,52 +393,52 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-//        userdata.child("institute").child("building").child("subjects").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                for (DataSnapshot subjects : dataSnapshot.getChildren()) {
-//                    d.subjectArrayList.add(new Subject(subjects.getKey(), subjects.getValue().toString()));
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//        devinfo.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//
-//                d.devinnfo.message = (dataSnapshot.child("about").child("message").getValue().toString());
-//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link1").getValue().toString());
-//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link2").getValue().toString());
-//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link4").getValue().toString());
-//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link3").getValue().toString());
-//
-//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state1").getValue().toString());
-//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone1").getValue().toString());
-//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state2").getValue().toString());
-//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone2").getValue().toString());
-//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state3").getValue().toString());
-//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone3").getValue().toString());
-//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state4").getValue().toString());
-//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone4").getValue().toString());
-//
-//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link1").getValue().toString());
-//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link2").getValue().toString());
-//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link3").getValue().toString());
-//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link4").getValue().toString());
-//
-//                d.devinnfo.Rateing = Integer.valueOf(dataSnapshot.child("rateus").child("stars").getValue().toString());
-//                d.devinnfo.link = dataSnapshot.child("rateus").child("link").getValue().toString();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        userdata.child("institute").child("building").child("subjects").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot subjects : dataSnapshot.getChildren()) {
+                    d.subjectArrayList.add(new Subject(subjects.getKey(), subjects.getValue().toString()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        devinfo.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                d.devinnfo.message = (dataSnapshot.child("about").child("message").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link1").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link2").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link4").getValue().toString());
+                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link3").getValue().toString());
+
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state1").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone1").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state2").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone2").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state3").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone3").getValue().toString());
+                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state4").getValue().toString());
+                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone4").getValue().toString());
+
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link1").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link2").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link3").getValue().toString());
+                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link4").getValue().toString());
+
+                d.devinnfo.Rateing = Integer.valueOf(dataSnapshot.child("rateus").child("stars").getValue().toString());
+                d.devinnfo.link = dataSnapshot.child("rateus").child("link").getValue().toString();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void expandable(View view) {
@@ -524,10 +526,10 @@ public class MainActivity extends AppCompatActivity {
         EditText et_teacher1 = findViewById(R.id.buildind_et_teacher1);
         et_teacher1.setText(d.building.subjects.get(0).teacher);
         EditText et_teacher2 = findViewById(R.id.buildind_et_teacher2);
-        et_teacher2.setText(d.building.subjects.get(1).teacher);
+        et_teacher2.setText(d.building.subjects.get(1));
         EditText et_teacher3 = findViewById(R.id.buildind_et_teacher3);
-        et_teacher3.setText(d.building.subjects.get(2).teacher);
-        Switch sw_grp_tuition = findViewById(R.id.building_switch_grp_tuition);
+        et_teacher3.setText(d.building.subjects.get(2));
+     Switch sw_grp_tuition = findViewById(R.id.building_switch_grp_tuition);
         Switch sw_hom_tuition = findViewById(R.id.building_switch_hom_tuition);
         if (d.building.switch1) {
             sw_grp_tuition.setChecked(true);
@@ -651,6 +653,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.homepage_profile: setContentView(R.layout.layout);
             break;
             case R.id.homepage_building: setContentView(R.layout.building1);
+            loadDataInBuilding();
             break;
             case R.id.homepage_info:setContentView(R.layout.tab3);
             break;

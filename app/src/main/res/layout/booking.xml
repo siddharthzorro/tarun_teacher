@@ -113,18 +113,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/merasar">
 
+        <!--<com.mancj.materialsearchbar.MaterialSearchBar-->
+            <!--android:id="@+id/searchBar"-->
+            <!--style="@style/MaterialSearchBarLight"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:mt_hint="Search here"-->
+            <!--app:mt_maxSuggestionsCount="10"-->
+            <!--app:mt_menuIconDrawable="@drawable/icon_selector_home_bottom_1"-->
+            <!--app:mt_placeholder="Search here"-->
+
+            <!--/>-->
         <com.mancj.materialsearchbar.MaterialSearchBar
-            android:id="@+id/searchBar"
             style="@style/MaterialSearchBarLight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            app:mt_speechMode="true"
             app:mt_hint="Search here"
             app:mt_maxSuggestionsCount="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:mt_menuIconDrawable="@drawable/icon_selector_home_bottom_1"
-            app:mt_placeholder="Search here"
-
+            android:id="@+id/searchBar"
+           app:mt_placeholder="Search here"
             />
-
     </LinearLayout>
 
     <View

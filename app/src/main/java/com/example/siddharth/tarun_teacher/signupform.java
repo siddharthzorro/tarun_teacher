@@ -24,8 +24,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -50,12 +53,6 @@ public class signupform extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         x = findViewById(R.id.vp_prmt);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(promote.this,MainActivity.class));
-//            }
-//        });
         x.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -149,15 +146,7 @@ public class signupform extends AppCompatActivity {
         RecyclerViewX viewX=findViewById(R.id.rvx_post_promotion);
         viewX.addAdapter(viewX.getAdapter().getItemCount()+1,R.layout.post_promotion_holder,signupform.this, LinearLayoutManager.HORIZONTAL);
     }
-//    public void goleft(View view) {
-//        if (x.getCurrentItem() != 0) {
-//            x.setCurrentItem(0);
-//        }
-//    }
-//
-//    public void goright(View view) {
-//        x.setCurrentItem(x.getCurrentItem() + 1);
-//    }
+
 
     public static class page1 extends Fragment {
         @Nullable
@@ -185,7 +174,20 @@ public class signupform extends AppCompatActivity {
 
     public void buildingSave(View view) {
         firebaseDatabase = FirebaseDatabase.getInstance();
+        email = email.replaceAll("[^a-zA-Z0-9]", "");
         userdata = firebaseDatabase.getReference("users").child(email);
+        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot d:dataSnapshot.getChildren() )
+                    System.out.println(d.getKey());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
@@ -211,16 +213,16 @@ public class signupform extends AppCompatActivity {
                 && checkEdittext(et_teacher2) && checkEdittext(et_teacher3) && checkEdittext(et_address) && checkEdittext(et_office_num)
                 && checkEdittext(et_website) && checkSwitch(sw_grp_tuition, sw_hom_tuition) && checkSwitch(sw_direct, sw_entr_based))
         {
-            building.child("institutename").setValue(et_institute.getText());
-            building.child("about").setValue(et_about.getText());
-            building.child("subjects").child("subject1").setValue(et_teacher1);
-            building.child("subjects").child("subject2").setValue(et_teacher2);
-            building.child("subjects").child("subject3").setValue(et_teacher3);
+            building.child("institutename").setValue(et_institute.getText().toString());
+            building.child("about").setValue(et_about.getText().toString());
+            building.child("subjects").child("subject1").setValue(et_teacher1.getText().toString());
+            building.child("subjects").child("subject2").setValue(et_teacher2.getText().toString());
+            building.child("subjects").child("subject3").setValue(et_teacher3.getText().toString());
 //            building.child("subjects").child("subject4").setValue(et_teacher4");
 //            building.child("subjects").child("subject5").setValue(et_teacher5);
-            building.child("address").setValue(et_address);
-            building.child("officenumber").setValue(et_office_num);
-            building.child("website").setValue(et_website);
+            building.child("address").setValue(et_address.getText().toString());
+            building.child("officenumber").setValue(et_office_num.getText().toString());
+            building.child("website").setValue(et_website.getText().toString());
             if(sw_grp_tuition.isChecked()) {
                 building.child("tuitiontype").setValue("1");
             }else building.child("tuitiontype").setValue("0");
@@ -229,7 +231,7 @@ public class signupform extends AppCompatActivity {
            else
                building.child("admissiontype").setValue("0");
 
-            building.child("ownername").child("owner1").setValue(et_ceo);
+            building.child("ownername").child("owner1").setValue(et_ceo.getText().toString());
             building.child("rating").setValue("3");
             gohome();
         }
@@ -269,7 +271,7 @@ public class signupform extends AppCompatActivity {
             else {
 
                 email = et_name.getText().toString();
-                //email = email.replaceAll("[^a-zA-Z0-9]", "");
+
 
                 mAuth.createUserWithEmailAndPassword(email, et_pass.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -278,7 +280,8 @@ public class signupform extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d("ds", "createUserWithEmail:success");
-                                    MakeStructure.makestruct(mAuth.getUid());
+                                    email = email.replaceAll("[^a-zA-Z0-9]", "");
+                                    MakeStructure.makestruct(email);
                                     mAuth = FirebaseAuth.getInstance();
 //                                    gohome();
                                 } else {

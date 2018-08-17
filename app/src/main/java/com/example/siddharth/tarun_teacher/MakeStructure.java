@@ -93,6 +93,7 @@ import com.google.firebase.database.FirebaseDatabase;
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("feb").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("mar").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("apr").setValue("2");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("may").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jun").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jul").setValue("2");
          users.child(userid).child("institute").child("graph").child("monthlyoverview").child("aug").setValue("2");
