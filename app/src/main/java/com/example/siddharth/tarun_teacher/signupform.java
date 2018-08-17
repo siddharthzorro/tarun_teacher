@@ -205,10 +205,12 @@ public class signupform extends AppCompatActivity {
         EditText et_address = findViewById(R.id.building_et_address);
         EditText et_office_num = findViewById(R.id.building_et_office_num);
         EditText et_website = findViewById(R.id.building_et_website);
+        EditText et_ceo=findViewById(R.id.building_et_ceo);
 
         if (checkEdittext(et_institute) && checkEdittext(et_about) && checkEdittext(et_teacher1)
                 && checkEdittext(et_teacher2) && checkEdittext(et_teacher3) && checkEdittext(et_address) && checkEdittext(et_office_num)
-                && checkEdittext(et_website) && checkSwitch(sw_grp_tuition, sw_hom_tuition) && checkSwitch(sw_direct, sw_entr_based)) {
+                && checkEdittext(et_website) && checkSwitch(sw_grp_tuition, sw_hom_tuition) && checkSwitch(sw_direct, sw_entr_based))
+        {
             building.child("institutename").setValue(et_institute.getText());
             building.child("about").setValue(et_about.getText());
             building.child("subjects").child("subject1").setValue(et_teacher1);
@@ -216,15 +218,20 @@ public class signupform extends AppCompatActivity {
             building.child("subjects").child("subject3").setValue(et_teacher3);
 //            building.child("subjects").child("subject4").setValue(et_teacher4");
 //            building.child("subjects").child("subject5").setValue(et_teacher5);
-            building.child("address").setValue("janakpuri");
-            building.child("officenumber").setValue("48484885");
-            building.child("website").setValue("http//..");
-            building.child("tuitiontype").setValue("0");
-            building.child("admissiontype").setValue("0");
-            building.child("ownername").child("owner1").setValue("name1");
-            building.child("ownername").child("owner2").setValue("name2");
+            building.child("address").setValue(et_address);
+            building.child("officenumber").setValue(et_office_num);
+            building.child("website").setValue(et_website);
+            if(sw_grp_tuition.isChecked()) {
+                building.child("tuitiontype").setValue("1");
+            }else building.child("tuitiontype").setValue("0");
+           if(sw_entr_based.isChecked())
+            building.child("admissiontype").setValue("1");
+           else
+               building.child("admissiontype").setValue("0");
+
+            building.child("ownername").child("owner1").setValue(et_ceo);
             building.child("rating").setValue("3");
-            
+            gohome();
         }
     }
     boolean checkEdittext(EditText editText) {

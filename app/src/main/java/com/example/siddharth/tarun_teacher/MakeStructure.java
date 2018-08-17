@@ -61,6 +61,7 @@ import com.google.firebase.database.FirebaseDatabase;
          users.child(userid).child("institute").child("building").child("photo").setValue("https//vrtr");
 
          users.child(userid).child("institute").child("building").child("institutename").setValue("FiitJee");
+         users.child(userid).child("institute").child("building").child("ceoname").setValue("Satya");
          users.child(userid).child("institute").child("building").child("about").setValue("we are 6s");
          users.child(userid).child("institute").child("building").child("subjects").child("subject1").setValue("teacher1");
          users.child(userid).child("institute").child("building").child("subjects").child("subject2").setValue("teacher2");
