@@ -269,7 +269,7 @@ public class signupform extends AppCompatActivity {
             else {
 
                 email = et_name.getText().toString();
-                email = email.replaceAll("[^a-zA-Z0-9]", "");
+                //email = email.replaceAll("[^a-zA-Z0-9]", "");
 
                 mAuth.createUserWithEmailAndPassword(email, et_pass.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

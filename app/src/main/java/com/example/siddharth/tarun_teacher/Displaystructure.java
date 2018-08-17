@@ -11,58 +11,80 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Displaystructure {
-        String tv_ins_name;
-        String tv_owner_1;
-        String tv_owner_2;
-        Integer ratingbar_homepage;
-        Rank r1,r2;
-        Graphdata graphdata;
-        Review review1,review2;
-        Building building;
-        Infoabout infoabout;
-        Infofeedback infofeedback;
-        Inforateus inforateus;
-        Infocontact infocontact1,infocontact2,infocontact3,infocontact4;
-        Promotedisplay promotedisplay;
-        ArrayList<Notification> notifications;
-        ArrayList<Subject> subjectArrayList;
-        Devinnfo devinnfo;
-        Ranking ranking;
-        Imageins pic;
+        String tv_ins_name="fjdj";
+        String tv_owner_1="dbfhd";
+        String tv_owner_2= "asdj";
+        Integer ratingbar_homepage=1;
+        Rank r1=  new Rank(),r2= new Rank();
+        Graphdata graphdata= new Graphdata();
+        Review review1= new Review(),review2= new Review();
+        Building building= new Building();
+        Infoabout infoabout= new Infoabout();
+        Infofeedback infofeedback= new Infofeedback();
+        Inforateus inforateus= new Inforateus();
+        Infocontact infocontact1= new Infocontact(),infocontact2= new Infocontact(),infocontact3= new Infocontact(),infocontact4= new Infocontact();
+        Promotedisplay promotedisplay= new Promotedisplay();
+        ArrayList<Notification> notifications= new ArrayList<>();
+        ArrayList<Subject> subjectArrayList= new ArrayList<>();
+        Devinnfo devinnfo= new Devinnfo();
+        Ranking ranking= new Ranking();
+        Imageins pic= new Imageins();
+
+    public Displaystructure() {
+    }
 }
 
  class Devinnfo{
 
-    String message,link;
-    Integer Rateing;
-    ArrayList<String> about_Photo_links,feedback,state,phone;
-}
+    String message="dbfhd",link="dbfhd";
+    Integer Rateing=1;
+    ArrayList<String> about_Photo_links=new ArrayList<>(),feedback= new ArrayList<>(),state= new ArrayList<>(),phone= new ArrayList<>();
+
+     public Devinnfo() {
+     }
+ }
 class Imageins {
-    String ins_image;
+    String ins_image="dbfhd";
+
+    public Imageins() {
+    }
 }
 class Ranking{
-    Integer ins_rank;
+    Integer ins_rank=1;
+
+    public Ranking() {
+    }
 }
   class Rank {
-      String ins_name;
-      Integer rating;
-      Integer position;
+      String ins_name="dbfhd";
+      Integer rating=1;
+      Integer position=1;
 
+      public Rank() {
+      }
   }
   class Graphdata{
-     Integer v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12;
-     Integer w1,w2,w3,w4,w5,w6,w7;
+     Integer v1=1,v2=1,v3=2,v4=2,v5=3,v6=3,v7=3,v8=3,v9=4,v10=4,v11=4,v12=4;
+     Integer w1=0,w2=0,w3=0,w4=1,w5=1,w6=2,w7=0;
+
+      public Graphdata() {
+      }
   }
   class Review{
-    String comment,subject,name;
-    Integer ratebar;
+    String comment="dbfhd",subject="dbfhd",name="dbfhd";
+    Integer ratebar=1;
 
+      public Review() {
+      }
   }
   class Building{
-    String ins_name,about,office_num,address,website,ceo;
-    ArrayList<Subject> subjects;
-    Boolean switch1,switch2;
+    String ins_name="dbfhd",about="dbfhd",office_num="dbfhd",address="dbfhd",website="dbfhd",ceo="dbfhd";
+    ArrayList<Subject> subjects= new ArrayList<>();
+    Boolean switch1=false,switch2=false;
 //  todo attach google maps
+
+      public Building() {
+      }
   }
   class Subject{
       public Subject(String subject, String teacher) {
@@ -70,26 +92,44 @@ class Ranking{
           this.teacher = teacher;
       }
 
+      public Subject() {
+      }
+
       String subject,teacher;
   }
   class Infoabout{
-    URL url1,url2,url3,url4;
+    String url1="dbfhd",url2="dbfhd",url3="dbfhd",url4="dbfhd";
+
+      public Infoabout() {
+      }
   }
   class Infocontact{
-    String location,phnum;
+    String location="dbfhd",phnum="dbfhd";
+
+      public Infocontact() {
+      }
   }
   class Infofeedback{
-    URL u1,u2,u3,u4;
+    String u1="dbfhd",u2="dbfhd",u3="dbfhd",u4="dbfhd";
+
+      public Infofeedback() {
+      }
   }
   class Inforateus{
-    URL u;
-    Integer num_stars;
+    String u="dbfhd";
+    Integer num_stars=1;
+
+      public Inforateus() {
+      }
   }
   class Promotedisplay{
-   Integer radius,duration;
-   String area;
-   Boolean postpromotion,profilepromotion;
-   ArrayList<Postpromotion> pstprom;
+   Integer radius=0,duration=0;
+   String area="dbfhd";
+   Boolean postpromotion=false,profilepromotion=false;
+   ArrayList<Postpromotion> pstprom=new ArrayList<>();
+
+      public Promotedisplay() {
+      }
   }
   class Postpromotion{
       public Postpromotion(String link, String description, String photolink) {
@@ -98,9 +138,15 @@ class Ranking{
           this.photolink = photolink;
       }
 
-      String link;
-   String description,photolink;
+      String link="dbfhd";
+      String description="dbfhd",photolink="dbfhd";
+
+      public Postpromotion() {
+      }
   }
   class Notification{
-    String time,body,header;
+      public Notification() {
+      }
+
+      String time="dbfhd",body="dbfhd",header="dbfhd";
   }

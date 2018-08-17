@@ -278,13 +278,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    Displaystructure d;
+    Displaystructure d= new Displaystructure();
 
     void loadData() {
         userdata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                d.tv_ins_name = Objects.requireNonNull(dataSnapshot.child("building").child("institutename").getValue()).toString();
+                d.tv_ins_name = dataSnapshot.child("building").child("institutename").getValue() .toString();
                 d.tv_owner_1 = dataSnapshot.child("building").child("ownername").getValue().toString();
                 d.tv_owner_2 = dataSnapshot.child("building").child("ownername").getValue().toString();
                 d.ratingbar_homepage = Integer.valueOf(dataSnapshot.child("building").child("rating").getValue().toString());
@@ -391,52 +391,52 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        userdata.child("institute").child("building").child("subjects").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot subjects : dataSnapshot.getChildren()) {
-                    d.subjectArrayList.add(new Subject(subjects.getKey(), subjects.getValue().toString()));
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        devinfo.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                d.devinnfo.message = (dataSnapshot.child("about").child("message").getValue().toString());
-                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link1").getValue().toString());
-                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link2").getValue().toString());
-                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link4").getValue().toString());
-                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link3").getValue().toString());
-
-                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state1").getValue().toString());
-                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone1").getValue().toString());
-                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state2").getValue().toString());
-                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone2").getValue().toString());
-                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state3").getValue().toString());
-                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone3").getValue().toString());
-                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state4").getValue().toString());
-                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone4").getValue().toString());
-
-                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link1").getValue().toString());
-                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link2").getValue().toString());
-                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link3").getValue().toString());
-                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link4").getValue().toString());
-
-                d.devinnfo.Rateing = Integer.valueOf(dataSnapshot.child("rateus").child("stars").getValue().toString());
-                d.devinnfo.link = dataSnapshot.child("rateus").child("link").getValue().toString();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+//        userdata.child("institute").child("building").child("subjects").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for (DataSnapshot subjects : dataSnapshot.getChildren()) {
+//                    d.subjectArrayList.add(new Subject(subjects.getKey(), subjects.getValue().toString()));
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//        devinfo.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                d.devinnfo.message = (dataSnapshot.child("about").child("message").getValue().toString());
+//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link1").getValue().toString());
+//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link2").getValue().toString());
+//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link4").getValue().toString());
+//                d.devinnfo.about_Photo_links.add(dataSnapshot.child("about").child("link3").getValue().toString());
+//
+//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state1").getValue().toString());
+//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone1").getValue().toString());
+//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state2").getValue().toString());
+//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone2").getValue().toString());
+//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state3").getValue().toString());
+//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone3").getValue().toString());
+//                d.devinnfo.state.add(dataSnapshot.child("contactus").child("state4").getValue().toString());
+//                d.devinnfo.phone.add(dataSnapshot.child("contactus").child("phone4").getValue().toString());
+//
+//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link1").getValue().toString());
+//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link2").getValue().toString());
+//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link3").getValue().toString());
+//                d.devinnfo.feedback.add(dataSnapshot.child("feedback").child("link4").getValue().toString());
+//
+//                d.devinnfo.Rateing = Integer.valueOf(dataSnapshot.child("rateus").child("stars").getValue().toString());
+//                d.devinnfo.link = dataSnapshot.child("rateus").child("link").getValue().toString();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     public void expandable(View view) {
