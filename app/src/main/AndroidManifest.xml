@@ -44,6 +44,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Reviews_full" />
-        <activity android:name=".signupform" />
+        <activity android:name=".signupform" android:parentActivityName=".singnin" />
     </application>
 </manifest>
