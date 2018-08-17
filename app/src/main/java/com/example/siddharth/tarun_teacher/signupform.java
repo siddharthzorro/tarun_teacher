@@ -251,7 +251,7 @@ public class signupform extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
         currentUser=mAuth.getCurrentUser();
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("userid", currentUser.getUid());
+        intent.putExtra("userid", currentUser.getEmail());
         Toast.makeText(this,currentUser.getEmail()+ "your id is ",Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }

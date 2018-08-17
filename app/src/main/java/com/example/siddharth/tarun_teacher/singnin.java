@@ -28,7 +28,6 @@ public class singnin extends AppCompatActivity {
 
         setContentView(R.layout.teacher_sign_in);
 
-
     }
 
     @Override

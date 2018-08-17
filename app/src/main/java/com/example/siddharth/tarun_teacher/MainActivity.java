@@ -77,19 +77,18 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle data = getIntent().getExtras();
 
-//        String userid = data.getString("userid", "user1");
-          String userid="user1";
+        String userid = data.getString("userid", "user1");
+//          String userid="user1";
           final ViewPager viewPager = findViewById(R.id.vp);
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-
         devinfo = firebaseDatabase.getReference("devinfo");
-       userdata = firebaseDatabase.getReference("users").child(userid);
+        userdata = firebaseDatabase.getReference("users").child(userid);
         building = userdata.child("institute").child("building");
         DatabaseReference review = userdata.child("institute").child("review");
 
-        // loadData();
+         loadData();
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
