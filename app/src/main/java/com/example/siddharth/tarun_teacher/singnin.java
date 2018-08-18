@@ -62,7 +62,7 @@ public class singnin extends AppCompatActivity {
             } else {
 
                 String email=et_username.getText().toString();
-                email = email.replaceAll("[^a-zA-Z0-9]", "");
+               // email = email.replaceAll("[^a-zA-Z0-9]", "");
 
                 mAuth.signInWithEmailAndPassword(email, et_password.getText().toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

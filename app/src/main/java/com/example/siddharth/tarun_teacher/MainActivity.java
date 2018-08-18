@@ -289,8 +289,6 @@ public class MainActivity extends AppCompatActivity {
 
     Displaystructure d;
 
-
-
     void loadData() {
                userdata.addListenerForSingleValueEvent(new ValueEventListener() {
                    @Override

@@ -89,26 +89,26 @@ import com.google.firebase.database.FirebaseDatabase;
          users.child(userid).child("institute").child("review").child("review2").child("subject").setValue("asvxgs");
 
 
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jan").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("feb").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("mar").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("apr").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("may").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jun").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jul").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("aug").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("sep").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("oct").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("nov").setValue("2");
-         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("dec").setValue("2");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jan").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("feb").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("mar").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("apr").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("may").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jun").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("jul").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("aug").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("sep").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("oct").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("nov").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("monthlyoverview").child("dec").setValue("0.0");
 
-         users.child(userid).child("institute").child("graph").child("interaction").child("mon").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("tue").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("wed").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("thu").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("fri").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("sat").setValue("2");
-         users.child(userid).child("institute").child("graph").child("interaction").child("sun").setValue("2");
+         users.child(userid).child("institute").child("graph").child("interaction").child("mon").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("tue").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("wed").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("thu").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("fri").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("sat").setValue("0.0");
+         users.child(userid).child("institute").child("graph").child("interaction").child("sun").setValue("0.0");
 
          users.child(userid).child("institute").child("promote").child("promotepage1").child("radius").setValue("2");
          users.child(userid).child("institute").child("promote").child("promotepage1").child("duration").setValue("2");
