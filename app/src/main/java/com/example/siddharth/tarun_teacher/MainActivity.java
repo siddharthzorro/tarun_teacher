@@ -186,19 +186,29 @@ public class MainActivity extends AppCompatActivity {
                         series.setColor(0xFF008080);
 
                         HashMap<String,Float> monthGraph =new HashMap<>();
-                        monthGraph.put("Jan",0.0f);
-                        monthGraph.put("Feb",0.0f);
-                        monthGraph.put("Mar",0.0f);
-                        monthGraph.put("Apr",0.0f);
-                        monthGraph.put("May",0.0f);
-                        monthGraph.put("Jun",0.0f);
-                        monthGraph.put("Jul",0.0f);
-                        monthGraph.put("Aug",0.0f);
-                        monthGraph.put("Sep",0.0f);
-                        monthGraph.put("Oct",0.0f);
-                        monthGraph.put("Nov",0.0f);
-                        monthGraph.put("Dec",0.0f);
+                        HashMap<String,Float> weekdayGraph;
+                        weekdayGraph = new HashMap<>();
+                        monthGraph.put("Jan",Float.valueOf(d.graphdata.v1));
+                        monthGraph.put("Feb",Float.valueOf(d.graphdata.v2));
+                        monthGraph.put("Mar",Float.valueOf(d.graphdata.v3));
+                        monthGraph.put("Apr",Float.valueOf(d.graphdata.v4));
+                        monthGraph.put("May",Float.valueOf(d.graphdata.v5));
+                        monthGraph.put("Jun",Float.valueOf(d.graphdata.v6));
+                        monthGraph.put("Jul",Float.valueOf(d.graphdata.v7));
+                        monthGraph.put("Aug",Float.valueOf(d.graphdata.v8));
+                        monthGraph.put("Sep",Float.valueOf(d.graphdata.v9));
+                        monthGraph.put("Oct",Float.valueOf(d.graphdata.v10));
+                        monthGraph.put("Nov",Float.valueOf(d.graphdata.v11));
+                        monthGraph.put("Dec",Float.valueOf(d.graphdata.v12));
 
+
+                        weekdayGraph.put("M", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("T", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("W", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("Th", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("F", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("S", Float.valueOf(d.graphdata.w1));
+                        weekdayGraph.put("Su", Float.valueOf(d.graphdata.w1));
 
                         series.addPoint(new ValueLinePoint("Jan", monthGraph.get("Jan")));
                         series.addPoint(new ValueLinePoint("Feb", monthGraph.get("Feb")));
@@ -221,15 +231,8 @@ public class MainActivity extends AppCompatActivity {
                         ValueLineSeries series2 = new ValueLineSeries();
                         series2.setColor(0xFF008080);
                         series2.setColor(0xFF56B7F1);
-                        HashMap<String,Float> weekdayGraph =new HashMap<>();
 
-                        weekdayGraph.put("M",0.0f);
-                        weekdayGraph.put("T",0.0f);
-                        weekdayGraph.put("W",0.0f);
-                        weekdayGraph.put("Th",0.0f);
-                        weekdayGraph.put("F",0.0f);
-                        weekdayGraph.put("S",0.0f);
-                        weekdayGraph.put("Su",0.0f);
+
 
                         series2.addPoint(new ValueLinePoint("d", weekdayGraph.get("M")));
                         series2.addPoint(new ValueLinePoint("M", weekdayGraph.get("M")));
@@ -557,7 +560,7 @@ public class MainActivity extends AppCompatActivity {
         et_website.setText(d.building.website);
     }
     void loadDataInGraphs(){
-        
+
     }
     public void openfeedback(View view) {
         startActivity(new Intent(this, feedback.class));
@@ -659,7 +662,7 @@ public class MainActivity extends AppCompatActivity {
             break;
         }
 //        startActivity(intent);
-
+F
     }
     public void openSeeMore(View view) {
         startActivity(new Intent(this, Reviews_full.class));
