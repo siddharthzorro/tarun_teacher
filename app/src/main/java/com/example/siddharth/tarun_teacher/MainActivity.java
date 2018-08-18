@@ -662,7 +662,7 @@ public class MainActivity extends AppCompatActivity {
             break;
         }
 //        startActivity(intent);
-F
+
     }
     public void openSeeMore(View view) {
         startActivity(new Intent(this, Reviews_full.class));
