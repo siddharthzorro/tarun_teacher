@@ -529,9 +529,9 @@ public class MainActivity extends AppCompatActivity {
         EditText et_teacher1 = findViewById(R.id.buildind_et_teacher1);
         et_teacher1.setText(d.building.subjects.get(0).teacher);
         EditText et_teacher2 = findViewById(R.id.buildind_et_teacher2);
-        et_teacher2.setText(d.building.subjects.get(1));
+        et_teacher2.setText(d.building.subjects.get(1).teacher);
         EditText et_teacher3 = findViewById(R.id.buildind_et_teacher3);
-        et_teacher3.setText(d.building.subjects.get(2));
+        et_teacher3.setText(d.building.subjects.get(2).teacher);
      Switch sw_grp_tuition = findViewById(R.id.building_switch_grp_tuition);
         Switch sw_hom_tuition = findViewById(R.id.building_switch_hom_tuition);
         if (d.building.switch1) {
