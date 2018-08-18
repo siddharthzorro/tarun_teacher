@@ -15,6 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
@@ -23,11 +30,22 @@ import github.chenupt.springindicator.SpringIndicator;
 public class promote extends AppCompatActivity {
     ViewPager x;
     String TAG = "promote";
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference promotedisplay;
+    DatabaseReference postpromotiion;
+    DatabaseReference userdata;
+    DatabaseReference promote;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prmt_pager);
+        Bundle bundle=getIntent().getExtras();
+        String userid;
+        userid=bundle.get("userid").toString();
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        userdata = firebaseDatabase.getReference("users").child(userid);
+        promote = userdata.child("institute");
+
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -168,4 +186,32 @@ public class promote extends AppCompatActivity {
             return inflater.inflate(R.layout.promote12, container, false);
         }
     }
+
+   Displaystructure d;
+
+    void loaddata() {
+        userdata.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                d.promotedisplay.radius = Integer.valueOf(dataSnapshot.child("institute").child("promote").child("postpromotion1").child("radius").getValue().toString());
+                d.promotedisplay.duration = Integer.valueOf(dataSnapshot.child("institute").child("promote").child("postpromotion1").child("duration").getValue().toString());
+                d.promotedisplay.area = dataSnapshot.child("institute").child("promote").child("postpromotion1").child("area").getValue().toString();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+        void loaddatainpromote()
+        {
+            TextView duration= findViewById(R.id.tv_duration);
+            duration.setText(d.promotedisplay.duration);
+            TextView radius=findViewById(R.id.tv_website);
+            radius.setText(d.promotedisplay.radius);
+        }
+
+
 }

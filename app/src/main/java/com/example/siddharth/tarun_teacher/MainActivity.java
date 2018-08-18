@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     // TextView variable
     private TextView bottomSheetHeading;
-
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         d = new Displaystructure();
 
-        String userid = data.getString("userid", "user1");
+
+        userid = data.getString("userid", "user1");
         userid = userid.replaceAll("[^a-zA-Z0-9]", "");
 
         //          String userid="user1";
@@ -458,7 +459,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openpromote(View view) {
-        startActivity(new Intent(this, promote.class));
+        Intent intent=new Intent(this, promote.class);
+        intent.putExtra("userid",userid);
+        startActivity(intent);
     }
 
     public void openabout(View view) {
