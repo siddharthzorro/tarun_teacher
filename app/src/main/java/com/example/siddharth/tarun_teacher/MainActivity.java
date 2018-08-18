@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
                         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                         setSupportActionBar(toolbar);
-
+                        loaddatainhomepage();
                         bottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheetLayout));
                         bottomSheetHeading =  findViewById(R.id.bottomSheetHeading);
                         final Float rating = 2.5f;
@@ -559,6 +559,12 @@ public class MainActivity extends AppCompatActivity {
         EditText et_website = findViewById(R.id.building_et_website);
         et_website.setText(d.building.website);
     }
+   void loaddatainhomepage(){
+        TextView tv_ins_name= findViewById(R.id.institute_name);
+        tv_ins_name.setText(d.building.ins_name);
+        TextView tv_ceo_name=findViewById(R.id.owner_name1);
+        tv_ceo_name.setText(d.building.ceo);
+   }
     void loadDataInGraphs(){
 
     }
@@ -700,6 +706,7 @@ public class MainActivity extends AppCompatActivity {
             return inflater.inflate(R.layout.homepage, container, false);
         }
     }
+
 
     public static class settingpage extends Fragment {
         @Nullable
