@@ -21,11 +21,11 @@ public class Reviews_full extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.full_reviews);
-        RecyclerViewX viewX=findViewById(R.id.recyclerViewX);
+        //RecyclerViewX viewX=findViewById(R.id.recyclerViewX);
 
 
         totalReviewCounter=5;
-        viewX.addAdapter(5,R.layout.review_holder,this);
+        //viewX.addAdapter(5,R.layout.review_holder,this);
 
         RecyclerView recyclerView= findViewById(R.id.recyclerViewX);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
@@ -37,15 +37,19 @@ public class Reviews_full extends AppCompatActivity {
 
     class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewHolder>{
 
+
+
         public class ReviewHolder extends RecyclerView.ViewHolder {
             TextView textView;
+            ExpandableLayout expandableLayout;
+
             public ReviewHolder(View itemView) {
                 super(itemView);
-                textView= findViewById(R.id.unexpanded_text_review);
+                expandableLayout = findViewById(R.id.expandableLayout);
+                textView=itemView.findViewById(R.id.unexpanded_text_review);
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        ExpandableLayout expandableLayout= findViewById(R.id.expandableLayout);
                         expandableLayout.toggle();
                     }
                 });
@@ -62,7 +66,7 @@ public class Reviews_full extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ReviewHolder holder, int position) {
+        public void onBindViewHolder(@NonNull final ReviewHolder holder, int position) {
 
         }
 
