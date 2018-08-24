@@ -189,6 +189,8 @@ public class MainActivity extends AppCompatActivity {
                         HashMap<String,Float> monthGraph =new HashMap<>();
                         HashMap<String,Float> weekdayGraph;
                         weekdayGraph = new HashMap<>();
+                        weekdayGraph.clear();
+                        monthGraph.clear();
                         monthGraph.put("Jan",Float.valueOf(d.graphdata.v1));
                         monthGraph.put("Feb",Float.valueOf(d.graphdata.v2));
                         monthGraph.put("Mar",Float.valueOf(d.graphdata.v3));
@@ -528,11 +530,11 @@ public class MainActivity extends AppCompatActivity {
         Spinner sp_subject2 = findViewById(R.id.buildind_sp_subject2);
         Spinner sp_subject3 = findViewById(R.id.buildind_sp_subject3);
         EditText et_teacher1 = findViewById(R.id.buildind_et_teacher1);
-        et_teacher1.setText(d.building.subjects.get(0).teacher);
+//        et_teacher1.setText(d.building.subjects.get(0).teacher);
         EditText et_teacher2 = findViewById(R.id.buildind_et_teacher2);
-        et_teacher2.setText(d.building.subjects.get(1).teacher);
+//        et_teacher2.setText(d.building.subjects.get(1).teacher);
         EditText et_teacher3 = findViewById(R.id.buildind_et_teacher3);
-        et_teacher3.setText(d.building.subjects.get(2).teacher);
+//        et_teacher3.setText(d.building.subjects.get(2).teacher);
      Switch sw_grp_tuition = findViewById(R.id.building_switch_grp_tuition);
         Switch sw_hom_tuition = findViewById(R.id.building_switch_hom_tuition);
         if (d.building.switch1) {
