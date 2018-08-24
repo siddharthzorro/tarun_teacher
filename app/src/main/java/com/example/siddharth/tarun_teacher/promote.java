@@ -1,5 +1,6 @@
 package com.example.siddharth.tarun_teacher;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
+
 import java.util.Objects;
 
 import github.chenupt.springindicator.SpringIndicator;
@@ -35,11 +38,15 @@ public class promote extends AppCompatActivity {
     DatabaseReference postpromotiion;
     DatabaseReference userdata;
     DatabaseReference promote;
+
+
+    Integer radius=2;
+    Integer duration=3;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prmt_pager);
-        Bundle bundle=getIntent().getExtras();
+        final Bundle bundle=getIntent().getExtras();
         String userid;
         userid=bundle.get("userid").toString();
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -49,7 +56,7 @@ public class promote extends AppCompatActivity {
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 //        int ar[]={R.layout.promote, R.layout.promote11, R.layout.promote12};
         x = findViewById(R.id.vp_prmt);
@@ -78,8 +85,46 @@ public class promote extends AppCompatActivity {
                         right.setVisibility(View.INVISIBLE);
                         pay.setVisibility(View.INVISIBLE);
                         centerArrow.setVisibility(View.VISIBLE);
+                        DiscreteSeekBar discreteSeekBa1=findViewById(R.id.radius_seekbar);
+                        DiscreteSeekBar discreteSeekBar2= findViewById(R.id.duration_seekbar);
+                        discreteSeekBa1.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+                            @Override
+                            public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
+
+                            }
+
+                            @Override
+                            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
+
+                            }
+
+                            @Override
+                            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
+                                radius =seekBar.getProgress();
+
+
+                            }
+                        });
+                        discreteSeekBar2.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
+                            @Override
+                            public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
+
+                            }
+
+                            @Override
+                            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
+
+                            }
+
+                            @Override
+                            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
+                                duration= seekBar.getProgress();
+                            }
+                        });
                         break;
                     case 1:
+
+
                         Log.d(TAG, "onPageSelected: " + position);
                         left.setVisibility(View.VISIBLE);
                         right.setVisibility(View.VISIBLE);
@@ -110,10 +155,15 @@ public class promote extends AppCompatActivity {
 
 
                     case 2:
+
                         Log.d(TAG, "onPageSelected: " + position);
                         left.setVisibility(View.INVISIBLE);
                         right.setVisibility(View.INVISIBLE);
                         pay.setVisibility(View.VISIBLE);
+                        final TextView textView_radius=findViewById(R.id.tv_radius);
+                        final TextView textView_duration=findViewById(R.id.tv_duration);
+                        textView_radius.setText(String.valueOf(radius));
+                        textView_duration.setText(String.valueOf(duration));
                         centerArrow.setVisibility(View.INVISIBLE);
                         break;
                     default:
@@ -212,6 +262,5 @@ public class promote extends AppCompatActivity {
             TextView radius=findViewById(R.id.tv_website);
             radius.setText(d.promotedisplay.radius);
         }
-
 
 }

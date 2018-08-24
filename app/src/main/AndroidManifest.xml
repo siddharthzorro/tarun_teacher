@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".promote"
-            android:parentActivityName=".MainActivity" />
+             />
         <activity android:name=".contactus" />
         <activity android:name=".MenuHomepage" />
 
