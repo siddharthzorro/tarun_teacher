@@ -71,12 +71,21 @@
                 android:id="@+id/tv_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="16 Days"
+                android:text="16 "
                 android:textColor="@color/grey"
                 android:layout_gravity="end"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:layout_marginEnd="38dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="days"
+                android:layout_gravity="end"
                 android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 />
         </android.support.design.widget.CoordinatorLayout>
     </android.support.v7.widget.CardView>
@@ -105,12 +114,21 @@
                 android:id="@+id/tv_radius"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="22 Km sq."
+                android:text="22"
                 android:textColor="@color/grey"
                 android:layout_gravity="end"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:layout_marginEnd="52dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Km sq."
+                android:layout_gravity="end"
                 android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 />
         </android.support.design.widget.CoordinatorLayout>
     </android.support.v7.widget.CardView>
