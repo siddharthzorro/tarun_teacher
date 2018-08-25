@@ -42,6 +42,9 @@ public class promote extends AppCompatActivity {
 
     Integer radius=2;
     Integer duration=3;
+    Switch myswitch6;
+    Switch myswitch5;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,19 +127,18 @@ public class promote extends AppCompatActivity {
                         break;
                     case 1:
 
-
                         Log.d(TAG, "onPageSelected: " + position);
                         left.setVisibility(View.VISIBLE);
                         right.setVisibility(View.VISIBLE);
                         pay.setVisibility(View.INVISIBLE);
                         centerArrow.setVisibility(View.INVISIBLE);
-                        final Switch myswitch6 = findViewById(R.id.switch5);
+                         myswitch5 = findViewById(R.id.switch5);
 
-                        final Switch myswitch5 = findViewById(R.id.switch6);
+                         myswitch6 = findViewById(R.id.switch6);
                         myswitch5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                                 if(isChecked){
-                                    myswitch6.setChecked(false);
+                                   myswitch6.setChecked(false);
                                 }
                                 // true if the switch is in the On position
                             }
@@ -162,6 +164,11 @@ public class promote extends AppCompatActivity {
                         pay.setVisibility(View.VISIBLE);
                         final TextView textView_radius=findViewById(R.id.tv_radius);
                         final TextView textView_duration=findViewById(R.id.tv_duration);
+                        final TextView promote=findViewById(R.id.tv_promote);
+                        if(myswitch5.isChecked())
+                            promote.setText("Post Promotion");
+                        else promote.setText("Profile Promotion");
+
                         textView_radius.setText(String.valueOf(radius));
                         textView_duration.setText(String.valueOf(duration));
                         centerArrow.setVisibility(View.INVISIBLE);
